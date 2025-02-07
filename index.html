@@ -35,8 +35,8 @@
       margin: 0;
       font-family: 'Chillen', sans-serif;
       font-style: italic;
-      background: black;
-      color: rgb(219, 172, 41);
+      background: #1a1a1a; /* Fondo gris oscuro */
+      color: #cda34f; /* Dorado refinado */
       overflow-x: hidden;
     }
     /* Clase para ocultar secciones dinámicamente */
@@ -47,7 +47,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(0, 0, 0, 0.85); /* Negro con transparencia */
       position: fixed;
       width: 100%;
       z-index: 1000;
@@ -62,7 +62,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 3px;
-      color: rgb(219, 172, 41);
+      color: #cda34f;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -81,11 +81,10 @@
       display: flex;
       gap: 10px;
     }
-    /* Aumentamos el padding y tamaño de fuente para facilitar el toque */
     .language-switcher button {
       background: none;
-      border: 1px solid rgb(219, 172, 41);
-      color: rgb(219, 172, 41);
+      border: 1px solid #cda34f;
+      color: #cda34f;
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
@@ -93,15 +92,15 @@
       font-size: 1rem;
     }
     .language-switcher button:hover {
-      background: rgb(219, 172, 41);
-      color: black;
+      background: #cda34f;
+      color: #1a1a1a;
     }
-    /* Aumentamos el área táctil del botón menú */
+    /* Botón menú */
     #menu-toggle {
       display: none;
       background: none;
       border: none;
-      color: rgb(219, 172, 41);
+      color: #cda34f;
       font-size: 2rem;
       cursor: pointer;
       position: absolute;
@@ -119,12 +118,14 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: rgb(190, 172, 122);
+      color: #d4af37;
       font-size: 1rem;
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    nav ul li a:hover { color: silver; }
+    nav ul li a:hover { 
+      color: #ffd700;
+    }
     /* Submenú */
     .has-submenu { position: relative; }
     .submenu {
@@ -132,7 +133,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(0, 0, 0, 0.85);
       padding: 10px;
       border-radius: 5px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
@@ -140,13 +141,15 @@
     }
     .submenu li { margin: 0; }
     .submenu li a {
-      color: rgb(190, 172, 122);
+      color: #d4af37;
       font-size: 0.9rem;
       padding: 5px 10px;
       display: block;
       transition: color 0.3s ease;
     }
-    .submenu li a:hover { color: silver; }
+    .submenu li a:hover { 
+      color: #ffd700;
+    }
     .has-submenu:hover .submenu { display: block; }
     @media (max-width: 767px) {
       header {
@@ -170,7 +173,7 @@
         font-size: 2rem;
         background: none;
         border: none;
-        color: rgb(219, 172, 41);
+        color: #cda34f;
         cursor: pointer;
       }
       .carousel-container { height: 50vh; }
@@ -179,7 +182,7 @@
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background: rgba(10, 10, 10, 0.95);
+        background: rgba(0, 0, 0, 0.85);
         position: absolute;
         top: 80px;
         left: 0;
@@ -210,7 +213,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      /* Se añade lazy loading y srcset en el HTML */
     }
     .hero-content {
       position: absolute;
@@ -218,9 +220,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      color: rgb(190, 172, 122);
+      color: #d4af37;
       text-align: center;
-      /* Mejorar la performance de animación */
       will-change: opacity, transform;
     }
     .hero-content h1 {
@@ -237,8 +238,8 @@
       opacity: 0;
     }
     .btn-custom {
-      background: rgb(219, 172, 41);
-      color: black;
+      background: #cda34f;
+      color: #1a1a1a;
       padding: 10px 20px;
       border-radius: 30px;
       font-size: 1rem;
@@ -252,12 +253,12 @@
       text-decoration: none;
       will-change: opacity, transform;
     }
-    .btn-custom:hover { background: rgb(190, 172, 122); }
+    .btn-custom:hover { background: #d4af37; }
     
     .content-below-carousel {
       padding: 40px 20px;
-      background: black;
-      color: rgb(219, 172, 41);
+      background: #1a1a1a;
+      color: #cda34f;
       text-align: center;
     }
     .content-below-carousel h2 { font-size: 2rem; margin-bottom: 20px; }
@@ -270,7 +271,7 @@
       padding: 20px;
     }
     .club-card, .promocion-card, .ubicacion-card {
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(0, 0, 0, 0.75);
       border-radius: 10px;
       padding: 20px;
       width: 300px;
@@ -279,7 +280,7 @@
     }
     .club-card:hover, .promocion-card:hover, .ubicacion-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
+      box-shadow: 0 10px 20px rgba(205, 163, 79, 0.3);
     }
     .club-card img, .promocion-card img {
       width: 100%;
@@ -292,9 +293,112 @@
     }
     .club-card p, .promocion-card p, .ubicacion-card p {
       font-size: 1rem;
-      color: rgb(190, 172, 122);
+      color: #d4af37;
     }
-    /* GALERÍA: Slider horizontal */
+    /* Estilos para LOGOS DE CLUBS */
+    .logo-container-logos {
+      max-width: 150px;
+      margin: 0 auto;
+      padding: 15px;
+      border: 2px solid rgba(205, 163, 79, 0.5);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;  /* Evita que la imagen sobresalga */
+    }
+    .logo-container-logos:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(205, 163, 79, 0.5);
+    }
+    .logo-container-logos img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    /* Estilos para PATROCINADORES */
+    .sponsor-logo-container {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.75);
+      border: 2px solid rgba(205, 163, 79, 0.5);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sponsor-logo-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(205, 163, 79, 0.5);
+    }
+    .sponsor-logo-container img {
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+    }
+    /* Estilos para la sección SAHARA */
+    #sahara {
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      padding: 60px 20px;
+      border-top: 2px solid #cda34f;
+      border-bottom: 2px solid #cda34f;
+    }
+    .sahara-header {
+      margin-bottom: 30px;
+      padding: 10px;
+      border-bottom: 1px solid #cda34f;
+    }
+    .sahara-header h2 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffd700;
+    }
+    .sahara-gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .sahara-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+    .sahara-gallery-item {
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sahara-gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(205, 163, 79, 0.3);
+    }
+    .sahara-gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .sahara-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .sahara-actions {
+      margin-top: 30px;
+    }
+    .sahara-actions .btn-custom {
+      margin: 0 10px;
+    }
+    /* Galería */
     .gallery-slider-container {
       width: 80%;
       max-width: 1000px;
@@ -320,7 +424,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(0, 0, 0, 0.75);
       margin: 0 10px;
       flex: 0 0 auto;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -342,8 +446,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(10, 10, 10, 0.8);
-      color: rgb(219, 172, 41);
+      background: rgba(0, 0, 0, 0.75);
+      color: #cda34f;
       border: none;
       font-size: 2rem;
       padding: 10px;
@@ -359,8 +463,8 @@
       margin-top: 20px;
     }
     .contact-buttons .btn-custom {
-      background: rgb(219, 172, 41);
-      color: black;
+      background: #cda34f;
+      color: #1a1a1a;
       padding: 10px 20px;
       border-radius: 30px;
       font-size: 1rem;
@@ -371,16 +475,16 @@
       text-decoration: none;
       cursor: pointer;
     }
-    .contact-buttons .btn-custom:hover { background: rgb(190, 172, 122); }
+    .contact-buttons .btn-custom:hover { background: #d4af37; }
     footer {
       background: #0a0a0a;
-      color: silver;
+      color: #d4af37;
       text-align: center;
       padding: 15px;
       font-size: 0.8rem;
     }
-    footer a { color: silver; text-decoration: none; }
-    footer a:hover { color: #ff4500; }
+    footer a { color: #d4af37; text-decoration: none; }
+    footer a:hover { color: #ffd700; }
     .ubicacion-section {
       display: flex;
       flex-wrap: wrap;
@@ -389,7 +493,7 @@
       padding: 20px;
     }
     .ubicacion-card {
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(0, 0, 0, 0.75);
       border-radius: 10px;
       padding: 20px;
       width: 300px;
@@ -401,7 +505,7 @@
     }
     .ubicacion-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
+      box-shadow: 0 10px 20px rgba(205, 163, 79, 0.3);
     }
     .ubicacion-card h3 {
       font-size: 1.5rem;
@@ -409,77 +513,8 @@
     }
     .ubicacion-card p {
       font-size: 1rem;
-      color: rgb(190, 172, 122);
+      color: #d4af37;
       margin-bottom: 15px;
-    }
-    /* SAHARA */
-    .sahara-header { margin-bottom: 20px; }
-    .sahara-gallery-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 20px 0;
-    }
-    .sahara-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-items: center;
-      align-items: center;
-    }
-    .sahara-gallery-item {
-      background: rgba(10, 10, 10, 0.8);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .sahara-gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
-    }
-    .sahara-gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .sahara-gallery-item:hover img { transform: scale(1.05); }
-    .sahara-actions .btn-custom { margin: 0 5px; text-decoration: none; }
-    /* LOGOS CIRCULARES */
-    .logo-container-logos {
-      max-width: 150px;
-      margin: 0 auto;
-      padding: 15px;
-    }
-    .logo-container-logos img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-    /* PATROCINADORES */
-    .sponsor-logo-container {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(10, 10, 10, 0.8);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .sponsor-logo-container:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
-    }
-    .sponsor-logo-container img {
-      width: 80%;
-      height: auto;
-      object-fit: contain;
     }
   </style>
 </head>
@@ -660,13 +695,13 @@
   <section id="tropicana" class="content-below-carousel hidden">
     <h2 data-lang="tropicanaClub">Tropicana</h2>
   </section>
-  <!-- SAHARA (Oculta por defecto) -->
+  <!-- SAHARA -->
   <section id="sahara" class="content-below-carousel hidden">
     <div class="sahara-header text-center mb-4">
       <h2 data-lang="saharaClub">Sahara Club</h2>
     </div>
     <div class="sahara-gallery-container">
-      <h3 class="mb-3">Galería Sahara</h3>
+      <h3 class="mb-3" style="color:#ffd700;">Galería Sahara</h3>
       <div class="sahara-gallery">
         <div class="sahara-gallery-item">
           <img src="imagenes/03_resultado.jpg" alt="Sahara Club 1 - ambiente exclusivo" loading="lazy" />
@@ -745,7 +780,7 @@
         <div class="col-6 col-md-3 text-center mb-4">
           <a href="https://example.com" target="_blank" rel="noopener noreferrer">
             <div class="sponsor-logo-container">
-              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 2" loading="lazy" />
+              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 3" loading="lazy" />
             </div>
           </a>
         </div>
@@ -853,7 +888,7 @@
       duration: 1.5,
       delay: 0.5,
       ease: "power3.out",
-      textShadow: "0px 0px 10px rgba(219, 172, 41, 0.8)"
+      textShadow: "0px 0px 10px rgba(205, 163, 79, 0.8)"
     });
     gsap.to(".hero-content p", {
       opacity: 1,
@@ -861,7 +896,7 @@
       duration: 1.5,
       delay: 1,
       ease: "power3.out",
-      textShadow: "0px 0px 8px rgba(219, 172, 41, 0.6)"
+      textShadow: "0px 0px 8px rgba(205, 163, 79, 0.6)"
     });
     gsap.to(".btn-custom[data-lang='reserve']", {
       opacity: 1,
@@ -871,7 +906,7 @@
       ease: "elastic.out(1, 0.5)",
       repeat: -1,
       yoyo: true,
-      boxShadow: "0px 0px 15px rgba(219, 172, 41, 0.9)"
+      boxShadow: "0px 0px 15px rgba(205, 163, 79, 0.9)"
     });
 
     // Throttle en el evento scroll para optimizar el rendimiento en móviles
@@ -881,9 +916,9 @@
       throttleTimer = setTimeout(() => {
         let header = document.querySelector("header");
         if (window.scrollY > 50) {
-          gsap.to(header, { background: "rgba(10, 10, 10, 0.7)", backdropFilter: "blur(10px)", duration: 0.5 });
+          gsap.to(header, { background: "rgba(0, 0, 0, 0.7)", backdropFilter: "blur(10px)", duration: 0.5 });
         } else {
-          gsap.to(header, { background: "rgba(10, 10, 10, 0.95)", backdropFilter: "blur(0px)", duration: 0.5 });
+          gsap.to(header, { background: "rgba(0, 0, 0, 0.85)", backdropFilter: "blur(0px)", duration: 0.5 });
         }
         throttleTimer = null;
       }, 100);
