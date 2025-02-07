@@ -5,16 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <!-- ====================== SEO BASICS ====================== -->
-  <!-- Title optimizado con palabras clave principales -->
   <title>Paradise Mens Club en Puerto Vallarta | Gentlemen's Club Jalisco</title>
-  
-  <!-- Meta Description: resumen breve con palabras clave -->
   <meta name="description" content="Disfruta de la mejor experiencia en Paradise Mens Club de Puerto Vallarta. Gentlemen's Club exclusivo, shows, bailes y promociones en un ambiente único.">
-  
-  <!-- Meta Keywords -->
   <meta name="keywords" content="Gentlemen's Club, Puerto Vallarta, Paradise Mens Club, club de caballeros, despedidas de soltero, table dance en Puerto Vallarta">
-  
-  <!-- Indicar a Google que indexe y siga los enlaces -->
   <meta name="robots" content="index, follow">
   <!-- ======================================================== -->
 
@@ -47,9 +40,8 @@
       overflow-x: hidden;
     }
     /* Clase para ocultar secciones dinámicamente */
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -89,21 +81,23 @@
       display: flex;
       gap: 10px;
     }
+    /* Aumentamos el padding y tamaño de fuente para facilitar el toque */
     .language-switcher button {
       background: none;
       border: 1px solid rgb(219, 172, 41);
       color: rgb(219, 172, 41);
-      padding: 5px 10px;
+      padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
     }
     .language-switcher button:hover {
       background: rgb(219, 172, 41);
       color: black;
     }
+    /* Aumentamos el área táctil del botón menú */
     #menu-toggle {
-      /* Se oculta el botón ya que el menú estará siempre desplegado */
       display: none;
       background: none;
       border: none;
@@ -114,6 +108,7 @@
       right: 20px;
       top: 20px;
       z-index: 1001;
+      padding: 10px;
     }
     nav ul {
       list-style: none;
@@ -129,13 +124,9 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    nav ul li a:hover {
-      color: silver;
-    }
+    nav ul li a:hover { color: silver; }
     /* Submenú */
-    .has-submenu {
-      position: relative;
-    }
+    .has-submenu { position: relative; }
     .submenu {
       display: none;
       position: absolute;
@@ -147,9 +138,7 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
       z-index: 1001;
     }
-    .submenu li {
-      margin: 0;
-    }
+    .submenu li { margin: 0; }
     .submenu li a {
       color: rgb(190, 172, 122);
       font-size: 0.9rem;
@@ -157,22 +146,14 @@
       display: block;
       transition: color 0.3s ease;
     }
-    .submenu li a:hover {
-      color: silver;
-    }
-    .has-submenu:hover .submenu {
-      display: block;
-    }
+    .submenu li a:hover { color: silver; }
+    .has-submenu:hover .submenu { display: block; }
     @media (max-width: 767px) {
       header {
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 10px 20px;
         width: 100%;
       }
-      
       .logo-container {
         display: flex;
         justify-content: space-between;
@@ -180,9 +161,21 @@
         width: 100%;
         gap: 10px;
       }
-      /* Forzamos que el menú se muestre siempre */
+      #menu-toggle {
+        display: block;
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-left: 10px;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: rgb(219, 172, 41);
+        cursor: pointer;
+      }
+      .carousel-container { height: 50vh; }
       #nav-links {
-        display: flex !important;
+        display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
@@ -193,46 +186,18 @@
         padding: 10px 0;
         z-index: 1000;
       }
-      nav ul li {
-        margin: 10px 0;
-      }
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      .btn-custom {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-      }
-      .language-switcher {
-        flex-direction: column;
-        gap: 5px;
-      }
-      .language-switcher button {
-        padding: 3px 8px;
-        font-size: 0.8rem;
-        border-radius: 3px;
-      }
-      .clubs-section, .promociones-section, .ubicacion-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .club-card, .promocion-card, .ubicacion-card {
-        width: 90%;
-      }
-      .gallery-item {
-        width: 90%;
-        height: 150px;
-      }
-      .contact-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .sahara-carousel-container {
-        width: 90%;
-      }
+      #nav-links.active { display: flex; }
+      nav ul li { margin: 10px 0; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      .btn-custom { padding: 8px 16px; font-size: 0.9rem; }
+      .language-switcher { flex-direction: column; gap: 5px; }
+      .language-switcher button { padding: 8px 10px; font-size: 0.9rem; border-radius: 3px; }
+      .clubs-section, .promociones-section, .ubicacion-section { flex-direction: column; align-items: center; }
+      .club-card, .promocion-card, .ubicacion-card { width: 90%; }
+      .gallery-item { width: 90%; height: 150px; }
+      .contact-buttons { flex-direction: column; align-items: center; }
+      .sahara-carousel-container { width: 90%; }
     }
     .carousel-container {
       position: relative;
@@ -245,6 +210,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      /* Se añade lazy loading y srcset en el HTML */
     }
     .hero-content {
       position: absolute;
@@ -254,6 +220,8 @@
       z-index: 10;
       color: rgb(190, 172, 122);
       text-align: center;
+      /* Mejorar la performance de animación */
+      will-change: opacity, transform;
     }
     .hero-content h1 {
       font-size: 2.5rem;
@@ -282,24 +250,18 @@
       cursor: pointer;
       min-width: 120px;
       text-decoration: none;
+      will-change: opacity, transform;
     }
-    .btn-custom:hover {
-      background: rgb(190, 172, 122);
-    }
+    .btn-custom:hover { background: rgb(190, 172, 122); }
+    
     .content-below-carousel {
       padding: 40px 20px;
       background: black;
       color: rgb(219, 172, 41);
       text-align: center;
     }
-    .content-below-carousel h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .content-below-carousel p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
+    .content-below-carousel h2 { font-size: 2rem; margin-bottom: 20px; }
+    .content-below-carousel p { font-size: 1rem; margin-bottom: 20px; }
     .clubs-section, .promociones-section, .ubicacion-section {
       display: flex;
       flex-wrap: wrap;
@@ -332,9 +294,7 @@
       font-size: 1rem;
       color: rgb(190, 172, 122);
     }
-    /* ======================================================
-       Galería: Slider horizontal en contenedor fijo y centrado
-       ====================================================== */
+    /* GALERÍA: Slider horizontal */
     .gallery-slider-container {
       width: 80%;
       max-width: 1000px;
@@ -350,9 +310,7 @@
       align-items: center;
       width: 100%;
     }
-    .gallery-slider::-webkit-scrollbar {
-      display: none;
-    }
+    .gallery-slider::-webkit-scrollbar { display: none; }
     .gallery-item {
       width: 300px;
       height: 200px;
@@ -378,9 +336,7 @@
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
+    .gallery-item:hover img { transform: scale(1.1); }
     .gallery-prev,
     .gallery-next {
       position: absolute;
@@ -394,12 +350,8 @@
       cursor: pointer;
       z-index: 10;
     }
-    .gallery-prev {
-      left: 0;
-    }
-    .gallery-next {
-      right: 0;
-    }
+    .gallery-prev { left: 0; }
+    .gallery-next { right: 0; }
     .contact-buttons {
       display: flex;
       justify-content: center;
@@ -419,9 +371,7 @@
       text-decoration: none;
       cursor: pointer;
     }
-    .contact-buttons .btn-custom:hover {
-      background: rgb(190, 172, 122);
-    }
+    .contact-buttons .btn-custom:hover { background: rgb(190, 172, 122); }
     footer {
       background: #0a0a0a;
       color: silver;
@@ -429,13 +379,8 @@
       padding: 15px;
       font-size: 0.8rem;
     }
-    footer a {
-      color: silver;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #ff4500;
-    }
+    footer a { color: silver; text-decoration: none; }
+    footer a:hover { color: #ff4500; }
     .ubicacion-section {
       display: flex;
       flex-wrap: wrap;
@@ -467,12 +412,8 @@
       color: rgb(190, 172, 122);
       margin-bottom: 15px;
     }
-    /* ======================
-       SAHARA: Nueva Sección
-       ====================== */
-    .sahara-header {
-      margin-bottom: 20px;
-    }
+    /* SAHARA */
+    .sahara-header { margin-bottom: 20px; }
     .sahara-gallery-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -504,16 +445,9 @@
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-    .sahara-gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    .sahara-actions .btn-custom {
-      margin: 0 5px;
-      text-decoration: none;
-    }
-    /* =================================
-       NUEVA SECCIÓN: LOGOS CIRCULARES
-       ================================= */
+    .sahara-gallery-item:hover img { transform: scale(1.05); }
+    .sahara-actions .btn-custom { margin: 0 5px; text-decoration: none; }
+    /* LOGOS CIRCULARES */
     .logo-container-logos {
       max-width: 150px;
       margin: 0 auto;
@@ -524,9 +458,7 @@
       height: auto;
       object-fit: contain;
     }
-    /* =============================================
-       NUEVA SECCIÓN: PATROCINADORES (LOGOS CIRCULARES)
-       ============================================= */
+    /* PATROCINADORES */
     .sponsor-logo-container {
       width: 120px;
       height: 120px;
@@ -555,7 +487,7 @@
   <header>
     <div class="logo-container">
       <div class="logo">
-        <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club Logo en Puerto Vallarta" />
+        <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club Logo en Puerto Vallarta" loading="lazy" />
       </div>
       <div class="language-switcher">
         <button id="lang-es">ES</button>
@@ -596,13 +528,15 @@
       <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="imagenes/sensual_resultado.jpg" alt="Ambiente exótico en Paradise Mens Club Puerto Vallarta" />
+            <img src="imagenes/sensual_resultado.jpg" alt="Ambiente exótico en Paradise Mens Club Puerto Vallarta" loading="lazy"
+              srcset="imagenes/sensual_resultado-small.jpg 480w, imagenes/sensual_resultado.jpg 800w"
+              sizes="(max-width: 767px) 100vw, 800px"/>
           </div>
           <div class="carousel-item">
-            <img src="imagenes/sensual2_resultado.jpg" alt="Show nocturno en el Gentlemen's Club" />
+            <img src="imagenes/sensual2_resultado.jpg" alt="Show nocturno en el Gentlemen's Club" loading="lazy" />
           </div>
           <div class="carousel-item">
-            <img src="imagenes/sensual3_resultado.jpg" alt="Festejando en Paradise Club Puerto Vallarta" />
+            <img src="imagenes/sensual3_resultado.jpg" alt="Festejando en Paradise Club Puerto Vallarta" loading="lazy" />
           </div>
         </div>
       </div>
@@ -621,31 +555,31 @@
       <button class="gallery-prev">&#10094;</button>
       <div class="gallery-slider">
         <div class="gallery-item">
-          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.21.11 PM_resultado.jpg" alt="Disfruta de la mejor fiesta en Paradise Mens Club" />
+          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.21.11 PM_resultado.jpg" alt="Disfruta de la mejor fiesta en Paradise Mens Club" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/PDS01 (1)_resultado.jpg" alt="Clientes disfrutando en Puerto Vallarta" />
+          <img src="imagenes/PDS01 (1)_resultado.jpg" alt="Clientes disfrutando en Puerto Vallarta" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.27.44 PM_resultado.jpg" alt="Ambiente nocturno en Gentlemen's Club" />
+          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.27.44 PM_resultado.jpg" alt="Ambiente nocturno en Gentlemen's Club" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/PDS03 (40)_resultado.jpg" alt="Bailarinas en Paradise Mens Club" />
+          <img src="imagenes/PDS03 (40)_resultado.jpg" alt="Bailarinas en Paradise Mens Club" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.27.14 PM_resultado.jpg" alt="Grupo disfrutando de promociones" />
+          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.27.14 PM_resultado.jpg" alt="Grupo disfrutando de promociones" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/PDS01 (6)_resultado.jpg" alt="Show especial en el club" />
+          <img src="imagenes/PDS01 (6)_resultado.jpg" alt="Show especial en el club" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.21.45 PM_resultado.jpg" alt="Sesión fotográfica en Paradise Mens Club" />
+          <img src="imagenes/WhatsApp Image 2025-02-05 at 4.21.45 PM_resultado.jpg" alt="Sesión fotográfica en Paradise Mens Club" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/PDS01 (37)_resultado.jpg" alt="Entretenimiento para adultos en Jalisco" />
+          <img src="imagenes/PDS01 (37)_resultado.jpg" alt="Entretenimiento para adultos en Jalisco" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="imagenes/par_resultado.jpg" alt="Entrada a Paradise Mens Club Puerto Vallarta" />
+          <img src="imagenes/par_resultado.jpg" alt="Entrada a Paradise Mens Club Puerto Vallarta" loading="lazy" />
         </div>
       </div>
       <button class="gallery-next">&#10095;</button>
@@ -657,15 +591,15 @@
     <h2 data-lang="promociones">Promociones</h2>
     <div class="promociones-section">
       <div class="promocion-card">
-        <img src="imagenes/shot_resultado.webp" alt="Shot de bienvenida gratis Paradise Mens Club" />
+        <img src="imagenes/shot_resultado.webp" alt="Shot de bienvenida gratis Paradise Mens Club" loading="lazy" />
         <p data-lang="promocion1">Shot de Bienvenida Gratis</p>
       </div>
       <div class="promocion-card">
-        <img src="imagenes/frelap_resultado.jpg" alt="Promoción de baile gratis en Gentlemen's Club" />
+        <img src="imagenes/frelap_resultado.jpg" alt="Promoción de baile gratis en Gentlemen's Club" loading="lazy" />
         <p data-lang="promocion2">Baile Gratis</p>
       </div>
       <div class="promocion-card">
-        <img src="imagenes/trabns_resultado.jpg" alt="Transporte sin costo al bar en Puerto Vallarta" />
+        <img src="imagenes/trabns_resultado.jpg" alt="Transporte sin costo al bar en Puerto Vallarta" loading="lazy" />
         <p data-lang="promocion3">Transporte Sin costo al Bar</p>
       </div>
     </div>
@@ -676,15 +610,15 @@
     <h2 data-lang="eventos">Eventos</h2>
     <div class="promociones-section">
       <div class="promocion-card">
-        <img src="imagenes/despe_resultado.webp" alt="Despedidas de soltero en Puerto Vallarta" />
+        <img src="imagenes/despe_resultado.webp" alt="Despedidas de soltero en Puerto Vallarta" loading="lazy" />
         <p data-lang="evento1">Despedidas De Solteros</p>
       </div>
       <div class="promocion-card">
-        <img src="imagenes/divor_resultado.jpg" alt="Fiestas de divorcio en Gentlemen's Club" />
+        <img src="imagenes/divor_resultado.jpg" alt="Fiestas de divorcio en Gentlemen's Club" loading="lazy" />
         <p data-lang="evento2">Divorcios</p>
       </div>
       <div class="promocion-card">
-        <img src="imagenes/cumple_resultado.jpg" alt="Fiestas de cumpleaños en Paradise Mens Club" />
+        <img src="imagenes/cumple_resultado.jpg" alt="Fiestas de cumpleaños en Paradise Mens Club" loading="lazy" />
         <p data-lang="evento3">Cumpleaños</p>
       </div>
     </div>
@@ -693,7 +627,7 @@
   <!-- CONTACTO + UBICACIÓN -->
   <section id="contacto" class="content-below-carousel">
     <div class="row">
-      <!-- COLUMNA 1: CONTACTO -->
+      <!-- CONTACTO -->
       <div class="col-12 col-md-6 mb-4">
         <h2 data-lang="contacto">Contacto</h2>
         <p data-lang="contactoTexto">
@@ -705,8 +639,7 @@
           <a href="https://www.facebook.com/share/18YSEznGcP/" target="_blank" class="btn-custom">Facebook</a>
         </div>
       </div>
-
-      <!-- COLUMNA 2: UBICACIÓN -->
+      <!-- UBICACIÓN -->
       <div class="col-12 col-md-6">
         <h2 data-lang="ubicacion">Ubicación</h2>
         <p data-lang="paradiseLocation">
@@ -715,7 +648,7 @@
         <a href="https://www.google.com/maps/place/Paradise+Mens+Club+Pv/@20.6348675,-105.2330238,17z" target="_blank" class="btn-custom" data-lang="verMapa">Ver en Google Maps</a>
         <div class="ubicacion-section">
           <div class="ubicacion-card">
-            <!-- Aquí podrías insertar un iframe de Google Maps, si lo deseas -->
+            <!-- Aquí podrías insertar un iframe de Google Maps -->
           </div>
         </div>
       </div>
@@ -726,35 +659,32 @@
   <!-- Tropicana (oculta por defecto) -->
   <section id="tropicana" class="content-below-carousel hidden">
     <h2 data-lang="tropicanaClub">Tropicana</h2>
-    <!-- Contenido de Tropicana si se desea en el futuro -->
   </section>
-
   <!-- SAHARA (Oculta por defecto) -->
   <section id="sahara" class="content-below-carousel hidden">
     <div class="sahara-header text-center mb-4">
       <h2 data-lang="saharaClub">Sahara Club</h2>
     </div>
-    <!-- Nueva galería estilo grid -->
     <div class="sahara-gallery-container">
       <h3 class="mb-3">Galería Sahara</h3>
       <div class="sahara-gallery">
         <div class="sahara-gallery-item">
-          <img src="imagenes/03_resultado.jpg" alt="Sahara Club 1 - ambiente exclusivo" />
+          <img src="imagenes/03_resultado.jpg" alt="Sahara Club 1 - ambiente exclusivo" loading="lazy" />
         </div>
         <div class="sahara-gallery-item">
-          <img src="imagenes/09_resultado.jpg" alt="Sahara Club 2 - noche de fiesta" />
+          <img src="imagenes/09_resultado.jpg" alt="Sahara Club 2 - noche de fiesta" loading="lazy" />
         </div>
         <div class="sahara-gallery-item">
-          <img src="imagenes/11_resultado.jpg" alt="Sahara Club 3 - show y música" />
+          <img src="imagenes/11_resultado.jpg" alt="Sahara Club 3 - show y música" loading="lazy" />
         </div>
         <div class="sahara-gallery-item">
-          <img src="imagenes/16_resultado.jpg" alt="Sahara Club 4 - área VIP" />
+          <img src="imagenes/16_resultado.jpg" alt="Sahara Club 4 - área VIP" loading="lazy" />
         </div>
         <div class="sahara-gallery-item">
-          <img src="imagenes/17_resultado.jpg" alt="Sahara Club 5 - entretenimiento para adultos" />
+          <img src="imagenes/17_resultado.jpg" alt="Sahara Club 5 - entretenimiento para adultos" loading="lazy" />
         </div>
         <div class="sahara-gallery-item">
-          <img src="imagenes/18_resultado.jpg" alt="Sahara Club 6 - Puerto Vallarta nightlife" />
+          <img src="imagenes/18_resultado.jpg" alt="Sahara Club 6 - Puerto Vallarta nightlife" loading="lazy" />
         </div>
       </div>
     </div>
@@ -764,9 +694,7 @@
     </div>
   </section>
 
-  <!-- ===========================================
-       NUEVA SECCIÓN: LOGOS CIRCULARES DE CLUBS
-       =========================================== -->
+  <!-- LOGOS CIRCULARES DE CLUBS -->
   <section class="logos-section content-below-carousel">
     <div class="container">
       <h2 class="text-center mb-4" style="font-family: 'Chillen', sans-serif; font-style: italic;">
@@ -777,16 +705,15 @@
         <div class="col-6 col-md-3 text-center mb-4">
           <a href="https://www.facebook.com/ParadiseClubPV" target="_blank" rel="noopener noreferrer">
             <div class="logo-container-logos">
-              <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club" />
+              <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club" loading="lazy" />
             </div>
           </a>
         </div>
-  
         <!-- Logo Sahara -->
         <div class="col-6 col-md-3 text-center mb-4">
           <a href="https://www.facebook.com/SaharaClubPV" target="_blank" rel="noopener noreferrer">
             <div class="logo-container-logos">
-              <img src="imagenes/sahara_resultado.png" alt="Sahara Club" />
+              <img src="imagenes/sahara_resultado.png" alt="Sahara Club" loading="lazy" />
             </div>
           </a>
         </div>
@@ -794,35 +721,31 @@
     </div>
   </section>
 
-  <!-- =============================================
-       NUEVA SECCIÓN: PATROCINADORES (LOGOS CIRCULARES)
-       ============================================= -->
+  <!-- PATROCINADORES -->
   <section id="patrocinadores" class="content-below-carousel">
     <div class="container">
       <h2 class="text-center mb-4" style="font-family: 'Chillen', sans-serif; font-style: italic;">
         Patrocinadores
       </h2>
       <div class="row justify-content-center align-items-center">
-        <!-- Patrocinador 1 -->
         <div class="col-6 col-md-3 text-center mb-4">
           <a href="https://example.com" target="_blank" rel="noopener noreferrer">
             <div class="sponsor-logo-container">
-              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 1" />
-            </div>
-          </a>
-        </div>
-        <!-- Patrocinador 2 -->
-        <div class="col-6 col-md-3 text-center mb-4">
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-            <div class="sponsor-logo-container">
-              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 2" />
+              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 1" loading="lazy" />
             </div>
           </a>
         </div>
         <div class="col-6 col-md-3 text-center mb-4">
           <a href="https://example.com" target="_blank" rel="noopener noreferrer">
             <div class="sponsor-logo-container">
-              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 2" />
+              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 2" loading="lazy" />
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center mb-4">
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <div class="sponsor-logo-container">
+              <img src="imagenes/patrocinador.jpg" alt="Logo Patrocinador 2" loading="lazy" />
             </div>
           </a>
         </div>
@@ -832,8 +755,7 @@
   
   <footer>
     <p data-lang="footer">
-      &copy; 2025 Paradise Means Club. Todos los derechos reservados. |
-      <a href="#" data-lang="privacy">Política de privacidad</a>
+      &copy; 2025 Paradise Means Club. Todos los derechos reservados. | <a href="#" data-lang="privacy">Política de privacidad</a>
     </p>
   </footer>
 
@@ -906,13 +828,11 @@
       }
     };
 
-    // Función para cambiar el idioma
     function changeLanguage(lang) {
       document.querySelector(".hero-content h1").textContent = translations[lang].welcome;
       document.querySelector(".hero-content p").textContent = translations[lang].slogan;
       document.querySelector(".btn-custom[data-lang='reserve']").textContent = translations[lang].reserve;
       document.querySelector("footer p").innerHTML = `${translations[lang].footer} | <a href="#">${translations[lang].privacy}</a>`;
-
       document.querySelectorAll("[data-lang]").forEach((element) => {
         const key = element.getAttribute("data-lang");
         if (translations[lang][key]) {
@@ -921,16 +841,12 @@
       });
       localStorage.setItem("language", lang);
     }
-
-    // Inicializa el idioma al cargar la página
     const savedLanguage = localStorage.getItem("language") || "es";
     changeLanguage(savedLanguage);
-
-    // Asigna eventos a los botones de cambio de idioma
     document.getElementById("lang-es").addEventListener("click", () => changeLanguage("es"));
     document.getElementById("lang-en").addEventListener("click", () => changeLanguage("en"));
 
-    // Animaciones con GSAP
+    // Animaciones GSAP
     gsap.to(".hero-content h1", {
       opacity: 1,
       y: -20,
@@ -958,21 +874,19 @@
       boxShadow: "0px 0px 15px rgba(219, 172, 41, 0.9)"
     });
 
+    // Throttle en el evento scroll para optimizar el rendimiento en móviles
+    let throttleTimer;
     window.addEventListener("scroll", function () {
-      let header = document.querySelector("header");
-      if (window.scrollY > 50) {
-        gsap.to(header, {
-          background: "rgba(10, 10, 10, 0.7)",
-          backdropFilter: "blur(10px)",
-          duration: 0.5
-        });
-      } else {
-        gsap.to(header, {
-          background: "rgba(10, 10, 10, 0.95)",
-          backdropFilter: "blur(0px)",
-          duration: 0.5
-        });
-      }
+      if (throttleTimer) return;
+      throttleTimer = setTimeout(() => {
+        let header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          gsap.to(header, { background: "rgba(10, 10, 10, 0.7)", backdropFilter: "blur(10px)", duration: 0.5 });
+        } else {
+          gsap.to(header, { background: "rgba(10, 10, 10, 0.95)", backdropFilter: "blur(0px)", duration: 0.5 });
+        }
+        throttleTimer = null;
+      }, 100);
     });
 
     gsap.from(".carousel-item img", {
@@ -981,38 +895,11 @@
       ease: "power2.out"
     });
 
-    // Código para el slider de la galería (sección principal)
-    document.addEventListener("DOMContentLoaded", function () {
-      const gallerySlider = document.querySelector(".gallery-slider");
-      const btnPrev = document.querySelector(".gallery-prev");
-      const btnNext = document.querySelector(".gallery-next");
-      const galleryItem = document.querySelector(".gallery-item");
-
-      // Calcula el desplazamiento (ancho de una tarjeta + margen)
-      const desplazamiento = galleryItem.offsetWidth + 20;
-
-      btnNext.addEventListener("click", () => {
-        gallerySlider.scrollBy({
-          left: desplazamiento,
-          behavior: "smooth"
-        });
-      });
-
-      btnPrev.addEventListener("click", () => {
-        gallerySlider.scrollBy({
-          left: -desplazamiento,
-          behavior: "smooth"
-        });
-      });
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      var navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("active");
     });
 
-    // Se elimina el código que activa el toggle del menú, ya que el menú estará siempre desplegado en dispositivos móviles.
-    // document.getElementById("menu-toggle").addEventListener("click", function () {
-    //   var navLinks = document.getElementById("nav-links");
-    //   navLinks.classList.toggle("active");
-    // });
-
-    // Manejador global actualizado: excluye enlaces con clase "club-link"
     document.querySelectorAll("#nav-links a").forEach((link) => {
       link.addEventListener("click", function () {
         if (!link.classList.contains("club-link") && link.getAttribute("href").startsWith("#")) {
@@ -1023,7 +910,6 @@
       });
     });
 
-    // Submenú en móviles
     document.querySelector(".has-submenu > a").addEventListener("click", function (event) {
       if (window.innerWidth <= 767) {
         event.preventDefault();
@@ -1035,16 +921,12 @@
       const clubLinks = document.querySelectorAll(".club-link");
       const mainSections = document.querySelectorAll("#inicio, #galeria, #promociones, #Eventos, #contacto, #ubicacion");
       const clubSections = document.querySelectorAll("#tropicana, #sahara");
-
       clubLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
-          
-          // Oculta el menú en dispositivos móviles, ya que no es necesario ahora
-          // if (window.innerWidth <= 767) {
-          //   document.getElementById("nav-links").classList.remove("active");
-          // }
-          
+          if (window.innerWidth <= 767) {
+            document.getElementById("nav-links").classList.remove("active");
+          }
           const clubId = link.getAttribute("data-club");
           if (clubId === "inicio") {
             mainSections.forEach((sec) => sec.classList.remove("hidden"));
@@ -1055,6 +937,39 @@
             document.getElementById(clubId).classList.remove("hidden");
           }
         });
+      });
+    });
+
+    // Slider de galería con botones y soporte para gestos táctiles
+    document.addEventListener("DOMContentLoaded", function () {
+      const gallerySlider = document.querySelector(".gallery-slider");
+      const btnPrev = document.querySelector(".gallery-prev");
+      const btnNext = document.querySelector(".gallery-next");
+      const galleryItem = document.querySelector(".gallery-item");
+      const desplazamiento = galleryItem.offsetWidth + 20;
+      btnNext.addEventListener("click", () => {
+        gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
+      });
+      btnPrev.addEventListener("click", () => {
+        gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
+      });
+      
+      // Soporte básico para gestos táctiles en el slider
+      let touchStartX = 0;
+      let touchEndX = 0;
+      gallerySlider.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+      gallerySlider.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+        if (Math.abs(swipeDistance) > 50) { // umbral de 50px
+          if (swipeDistance < 0) {
+            gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
+          } else {
+            gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
+          }
+        }
       });
     });
   </script>
