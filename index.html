@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- ====================== SEO BASICS ====================== -->
+  <!-- Title optimizado con palabras clave principales -->
+  <title>Paradise Mens Club en Puerto Vallarta | Gentlemen's Club Jalisco</title>
+  
+  <!-- Meta Description: resumen breve con palabras clave -->
+  <meta name="description" content="Disfruta de la mejor experiencia en Paradise Mens Club de Puerto Vallarta. Gentlemen's Club exclusivo, shows, bailes y promociones en un ambiente único.">
+  
+  <!-- Meta Keywords (muchos buscadores ya no las usan tanto, pero no hace daño) -->
+  <meta name="keywords" content="Gentlemen's Club, Puerto Vallarta, Paradise Mens Club, club de caballeros, despedidas de soltero, table dance en Puerto Vallarta">
+  
+  <!-- Opcional: Indicar a Google que indexe y siga los enlaces -->
+  <meta name="robots" content="index, follow">
+  <!-- ======================================================== -->
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Bootstrap Bundle (JS) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+    @font-face {
+      font-family: 'Chillen';
+      src: url('Fonts/Chillen.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      margin: 0;
+      font-family: 'Chillen', sans-serif;
+      font-style: italic;
+      background: black;
+      color: rgb(219, 172, 41);
+      overflow-x: hidden;
+    }
+    /* Clase para ocultar secciones dinámicamente */
+    .hidden {
+      display: none;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(10, 10, 10, 0.95);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: rgb(219, 172, 41);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      max-width: 350px;
+      overflow: hidden;
+      z-index: 1002;
+    }
+    .logo img {
+      max-height: 230%;
+      max-width: 400%;
+      object-fit: contain;
+    }
+    .language-switcher {
+      display: flex;
+      gap: 10px;
+    }
+    .language-switcher button {
+      background: none;
+      border: 1px solid rgb(219, 172, 41);
+      color: rgb(219, 172, 41);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .language-switcher button:hover {
+      background: rgb(219, 172, 41);
+      color: black;
+    }
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: rgb(219, 172, 41);
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1001;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(190, 172, 122);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: silver;
+    }
+    /* Submenú */
+    .has-submenu {
+      position: relative;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(10, 10, 10, 0.95);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      z-index: 1001;
+    }
+    .submenu li {
+      margin: 0;
+    }
+    .submenu li a {
+      color: rgb(190, 172, 122);
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      display: block;
+      transition: color 0.3s ease;
+    }
+    .submenu li a:hover {
+      color: silver;
+    }
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+    @media (max-width: 767px) {
+      .has-submenu .submenu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+      .has-submenu:hover .submenu {
+        display: none;
+      }
+      .has-submenu.active .submenu {
+        display: block;
+      }
+      .submenu li a {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      color: rgb(190, 172, 122);
+      text-align: center;
+    }
+    /* H1 principal para SEO: incluye palabra clave "Club de Hombres" y "Puerto Vallarta" */
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+      opacity: 0;
+    }
+    .btn-custom {
+      background: rgb(219, 172, 41);
+      color: black;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.3s;
+      border: none;
+      display: inline-block;
+      cursor: pointer;
+      min-width: 120px;
+      text-decoration: none;
+    }
+    .btn-custom:hover {
+      background: rgb(190, 172, 122);
+    }
+    .content-below-carousel {
+      padding: 40px 20px;
+      background: black;
+      color: rgb(219, 172, 41);
+      text-align: center;
+    }
+    .content-below-carousel h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .content-below-carousel p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .clubs-section, .promociones-section, .ubicacion-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .club-card, .promocion-card, .ubicacion-card {
+      background: rgba(10, 10, 10, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .club-card:hover, .promocion-card:hover, .ubicacion-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
+    }
+    .club-card img, .promocion-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .club-card h3, .promocion-card h3, .ubicacion-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .club-card p, .promocion-card p, .ubicacion-card p {
+      font-size: 1rem;
+      color: rgb(190, 172, 122);
+    }
+    /* ======================================================
+       Galería: Slider horizontal en contenedor fijo y centrado
+       ====================================================== */
+    .gallery-slider-container {
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      align-items: center;
+      width: 100%;
+    }
+    .gallery-slider::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-item {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.8);
+      margin: 0 10px;
+      flex: 0 0 auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-prev,
+    .gallery-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 10, 10, 0.8);
+      color: rgb(219, 172, 41);
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .gallery-prev {
+      left: 0;
+    }
+    .gallery-next {
+      right: 0;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .contact-buttons .btn-custom {
+      background: rgb(219, 172, 41);
+      color: black;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.3s;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .contact-buttons .btn-custom:hover {
+      background: rgb(190, 172, 122);
+    }
+    footer {
+      background: #0a0a0a;
+      color: silver;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.8rem;
+    }
+    footer a {
+      color: silver;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #ff4500;
+    }
+    .ubicacion-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .ubicacion-card {
+      background: rgba(10, 10, 10, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .ubicacion-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
+    }
+    .ubicacion-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .ubicacion-card p {
+      font-size: 1rem;
+      color: rgb(190, 172, 122);
+      margin-bottom: 15px;
+    }
+    @media (max-width: 767px) {
+      header {
+        position: absolute;
+        width: 100%;
+      }
+      .carousel-container {
+        height: 70vh;
+      }
+      #menu-toggle {
+        display: block;
+      }
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(10, 10, 10, 0.95);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+      #nav-links.active {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .btn-custom {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .logo-container {
+        gap: 10px;
+      }
+      .language-switcher {
+        flex-direction: column;
+        gap: 5px;
+      }
+      .language-switcher button {
+        padding: 3px 8px;
+        font-size: 0.8rem;
+        border-radius: 3px;
+      }
+      .clubs-section, .promociones-section, .ubicacion-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .club-card, .promocion-card, .ubicacion-card {
+        width: 90%;
+      }
+      .gallery-item {
+        width: 90%;
+        height: 150px;
+      }
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sahara-carousel-container {
+        width: 90%;
+      }
+    }
+
+    /* ======================
+       Sahara: Nueva Sección
+       ====================== */
+    .sahara-header {
+      margin-bottom: 20px;
+    }
+    .sahara-gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .sahara-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+    .sahara-gallery-item {
+      background: rgba(10, 10, 10, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sahara-gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(219, 172, 41, 0.3);
+    }
+    .sahara-gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .sahara-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .sahara-actions .btn-custom {
+      margin: 0 5px;
+      text-decoration: none;
+    }
+
+    /* =================================
+       NUEVA SECCIÓN: LOGOS CIRCULARES
+       ================================= */
+    .logos-section {
+      padding: 40px 0;
+    }
+    .logo-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgb(219, 172, 41); /* Ajusta color y grosor */
+    }
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">
+        <!-- alt más descriptivo para SEO -->
+        <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club Logo en Puerto Vallarta" />
+      </div>
+      <div class="language-switcher">
+        <button id="lang-es">ES</button>
+        <button id="lang-en">EN</button>
+      </div>
+    </div>
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav id="nav-links">
+      <ul>
+        <li><a href="#home" class="club-link" data-club="inicio">Home</a></li>
+        <li class="has-submenu">
+          <a href="#clubs" data-lang="clubs">Clubs</a>
+          <ul class="submenu">
+            <li>
+              <a
+                href="#paradise"
+                data-lang="paradiseClub"
+                class="club-link"
+                data-club="inicio"
+                >Paradise</a
+              >
+            </li>
+            <!--
+            <li>
+              <a
+                href="#tropicana"
+                data-lang="tropicanaClub"
+                class="club-link"
+                data-club="tropicana"
+                >Tropicana</a
+              >
+            </li>
+            -->
+            <li>
+              <a
+                href="#sahara"
+                data-lang="saharaClub"
+                class="club-link"
+                data-club="sahara"
+                >Sahara</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="#galeria" data-lang="galeria">Galería</a></li>
+        <li><a href="#promociones" data-lang="promociones">Promociones</a></li>
+        <li><a href="#Eventos" data-lang="eventos">Eventos</a></li>
+        <li><a href="#contacto" data-lang="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL (CARRUSEL HERO) -->
+  <section id="inicio" class="hero">
+    <div class="carousel-container">
+      <div
+        id="heroCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagenes/sensual_resultado.jpg" alt="Ambiente exótico en Paradise Mens Club Puerto Vallarta" />
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/sensual2_resultado.jpg" alt="Show nocturno en el Gentlemen's Club" />
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/sensual3_resultado.jpg" alt="Festejando en Paradise Club Puerto Vallarta" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1 data-lang="welcome">Bienvenido a Paradise Mens Club</h1>
+      <p data-lang="slogan">No Rules, No limits</p>
+      <a
+        href="https://wa.me/523223840190"
+        target="_blank"
+        class="btn-custom"
+        data-lang="reserve"
+        >Reserva</a
+      >
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="content-below-carousel">
+    <h2 data-lang="galeria">Galería</h2>
+    <div class="gallery-slider-container">
+      <button class="gallery-prev">&#10094;</button>
+      <div class="gallery-slider">
+        <div class="gallery-item">
+          <img
+            src="imagenes/WhatsApp Image 2025-02-05 at 4.21.11 PM_resultado.jpg"
+            alt="Disfruta de la mejor fiesta en Paradise Mens Club"
+          />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/PDS01 (1)_resultado.jpg" alt="Clientes disfrutando en Puerto Vallarta" />
+        </div>
+        <div class="gallery-item">
+          <img
+            src="imagenes/WhatsApp Image 2025-02-05 at 4.27.44 PM_resultado.jpg"
+            alt="Ambiente nocturno en Gentlemen's Club"
+          />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/PDS03 (40)_resultado.jpg" alt="Bailarinas en Paradise Mens Club" />
+        </div>
+        <div class="gallery-item">
+          <img
+            src="imagenes/WhatsApp Image 2025-02-05 at 4.27.14 PM_resultado.jpg"
+            alt="Grupo disfrutando de promociones"
+          />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/PDS01 (6)_resultado.jpg" alt="Show especial en el club" />
+        </div>
+        <div class="gallery-item">
+          <img
+            src="imagenes/WhatsApp Image 2025-02-05 at 4.21.45 PM_resultado.jpg"
+            alt="Sesión fotográfica en Paradise Mens Club"
+          />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/PDS01 (37)_resultado.jpg" alt="Entretenimiento para adultos en Jalisco" />
+        </div>
+        <div class="gallery-item">
+          <img src="imagenes/par_resultado.jpg" alt="Entrada a Paradise Mens Club Puerto Vallarta" />
+        </div>
+      </div>
+      <button class="gallery-next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES -->
+  <section id="promociones" class="content-below-carousel">
+    <h2 data-lang="promociones">Promociones</h2>
+    <div class="promociones-section">
+      <div class="promocion-card">
+        <img src="imagenes/shot_resultado.webp" alt="Shot de bienvenida gratis Paradise Mens Club" />
+        <p data-lang="promocion1">Shot de Bienvenida Gratis</p>
+      </div>
+      <div class="promocion-card">
+        <img src="imagenes/frelap_resultado.jpg" alt="Promoción de baile gratis en Gentlemen's Club" />
+        <p data-lang="promocion2">Baile Gratis</p>
+      </div>
+      <div class="promocion-card">
+        <img src="imagenes/trabns_resultado.jpg" alt="Transporte sin costo al bar en Puerto Vallarta" />
+        <p data-lang="promocion3">Transporte Sin costo al Bar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section id="Eventos" class="content-below-carousel">
+    <h2 data-lang="eventos">Eventos</h2>
+    <div class="promociones-section">
+      <div class="promocion-card">
+        <img src="imagenes/despe_resultado.webp" alt="Despedidas de soltero en Puerto Vallarta" />
+        <p data-lang="evento1">Despedidas De Solteros</p>
+      </div>
+      <div class="promocion-card">
+        <img src="imagenes/divor_resultado.jpg" alt="Fiestas de divorcio en Gentlemen's Club" />
+        <p data-lang="evento2">Divorcios</p>
+      </div>
+      <div class="promocion-card">
+        <img src="imagenes/cumple_resultado.jpg" alt="Fiestas de cumpleaños en Paradise Mens Club" />
+        <p data-lang="evento3">Cumpleaños</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO + UBICACIÓN -->
+  <section id="contacto" class="content-below-carousel">
+    <div class="row">
+      <!-- COLUMNA 1: CONTACTO -->
+      <div class="col-12 col-md-6 mb-4">
+        <h2 data-lang="contacto">Contacto</h2>
+        <p data-lang="contactoTexto">
+          Para más información, contáctanos a través de WhatsApp o visita
+          nuestra página de Facebook.
+        </p>
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/523223840190"
+            target="_blank"
+            class="btn-custom"
+            >WhatsApp</a
+          >
+          <a
+            href="https://www.facebook.com/share/18YSEznGcP/"
+            target="_blank"
+            class="btn-custom"
+            >Facebook</a
+          >
+        </div>
+      </div>
+
+      <!-- COLUMNA 2: UBICACIÓN -->
+      <div class="col-12 col-md-6">
+        <h2 data-lang="ubicacion">Ubicación</h2>
+        <p data-lang="paradiseLocation">
+          Blvd. Francisco Medina Ascencio 1994, Las Glorias, 48333 Puerto Vallarta, Jal.
+        </p>
+        <a
+          href="https://www.google.com/maps/place/Paradise+Mens+Club+Pv/@20.6348675,-105.2330238,17z"
+          target="_blank"
+          class="btn-custom"
+          data-lang="verMapa"
+          >Ver en Google Maps</a
+        >
+        <div class="ubicacion-section">
+          <div class="ubicacion-card">
+            <!-- Aquí podrías insertar un iframe de Google Maps, si lo deseas -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECCIONES EXTRAS -->
+  <!-- Tropicana (oculta por defecto) -->
+  <section id="tropicana" class="content-below-carousel hidden">
+    <h2 data-lang="tropicanaClub">Tropicana</h2>
+    <!-- Contenido de Tropicana si se desea en el futuro -->
+  </section>
+
+  <!-- SAHARA (Oculta por defecto) -->
+  <section id="sahara" class="content-below-carousel hidden">
+    <div class="sahara-header text-center mb-4">
+      <h2 data-lang="saharaClub">Sahara Club</h2>
+    </div>
+    <!-- Nueva galería estilo grid -->
+    <div class="sahara-gallery-container">
+      <h3 class="mb-3">Galería Sahara</h3>
+      <div class="sahara-gallery">
+        <div class="sahara-gallery-item">
+          <img src="imagenes/03_resultado.jpg" alt="Sahara Club 1 - ambiente exclusivo" />
+        </div>
+        <div class="sahara-gallery-item">
+          <img src="imagenes/09_resultado.jpg" alt="Sahara Club 2 - noche de fiesta" />
+        </div>
+        <div class="sahara-gallery-item">
+          <img src="imagenes/11_resultado.jpg" alt="Sahara Club 3 - show y música" />
+        </div>
+        <div class="sahara-gallery-item">
+          <img src="imagenes/16_resultado.jpg" alt="Sahara Club 4 - área VIP" />
+        </div>
+        <div class="sahara-gallery-item">
+          <img src="imagenes/17_resultado.jpg" alt="Sahara Club 5 - entretenimiento para adultos" />
+        </div>
+        <div class="sahara-gallery-item">
+          <img src="imagenes/18_resultado.jpg" alt="Sahara Club 6 - Puerto Vallarta nightlife" />
+        </div>
+      </div>
+    </div>
+    <div class="sahara-actions text-center mt-4">
+      <a
+        href="https://wa.me/523223840190"
+        target="_blank"
+        class="btn-custom me-2"
+        data-lang="reserve"
+        >Reserva Ahora</a
+      >
+      <a
+        href="https://maps.app.goo.gl/Dr1xfFWqpxZkAKJy6"
+        target="_blank"
+        class="btn-custom"
+        >Ver Ubicación</a
+      >
+    </div>
+  </section>
+
+  <!-- ===========================================
+       NUEVA SECCIÓN: LOGOS CIRCULARES DE CLUBS
+       =========================================== -->
+       <section class="logos-section content-below-carousel">
+        <div class="container">
+          <h2 class="text-center mb-4" style="font-family: 'Chillen', sans-serif; font-style: italic;">
+            Nuestros Clubs
+          </h2>
+          <div class="row justify-content-center align-items-center">
+            <!-- Logo Paradise -->
+            <div class="col-6 col-md-3 text-center mb-4">
+              <a href="https://www.facebook.com/ParadiseClubPV" target="_blank" rel="noopener noreferrer">
+                <div class="logo-circle mx-auto">
+                  <!-- Reemplaza "imagenes/paradise.png" con la ruta de tu logo -->
+                  <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club" />
+                </div>
+                <p class="mt-2" style="font-family: 'Poppins', sans-serif;">
+                  
+                </p>
+              </a>
+            </div>
+    
+            <!-- Logo Sahara -->
+            <div class="col-6 col-md-3 text-center mb-4">
+              <a href="https://www.facebook.com/SaharaClubPV" target="_blank" rel="noopener noreferrer">
+                <div class="logo-circle mx-auto">
+                  <!-- Reemplaza "imagenes/sahara.png" con la ruta de tu logo -->
+                  <img src="imagenes/sahara_resultado.png" alt="Sahara Club" />
+                </div>
+                <p class="mt-2" style="font-family: 'Poppins', sans-serif;">
+                  
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  <footer>
+    <p data-lang="footer">
+      &copy; 2025 Paradise Means Club. Todos los derechos reservados. |
+      <a href="#" data-lang="privacy">Política de privacidad</a>
+    </p>
+  </footer>
+
+  <script>
+    // Traducciones en español e inglés
+    const translations = {
+      es: {
+        welcome: "Bienvenido a Paradise Mens Club ",
+        slogan: "No Rules, No Limits",
+        reserve: "Reserva",
+        inicio: "Inicio",
+        clubs: "Clubs",
+        galeria: "Galería",
+        promociones: "Promociones",
+        eventos: "Eventos",
+        contacto: "Contacto",
+        ubicacion: "Ubicación",
+        footer: "© 2025 Paradise Means Club. Todos los derechos reservados.",
+        privacy: "Política de privacidad",
+        tropicanaClub: "Tropicana",
+        saharaClub: "Sahara",
+        paradiseClub: "Paradise",
+        paradiseDescription:
+          "El club más exclusivo de la ciudad, con un ambiente sofisticado y servicios de primera.",
+        tropicanaDescription: "",
+        saharaDescription: "",
+        promocion1: "Shot de Bienvenida Gratis",
+        promocion2: "Baile Gratis",
+        promocion3: "Transporte Sin costo al Bar",
+        evento1: "Despedidas De Solteros",
+        evento2: "Divorcios",
+        evento3: "Cumpleaños",
+        contactoTexto:
+          "Para más información, contáctanos a través de WhatsApp o visita nuestra página de Facebook.",
+        ubicacionTexto:
+          "Encuentra nuestros clubs en las siguientes ubicaciones:",
+        paradiseLocation:
+          " Blvd. Francisco Medina Ascencio 1994, Las Glorias, 48333 Puerto Vallarta, Jal.",
+        tropicanaLocation: "Av. Priciliano Sanchez",
+        saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
+        verMapa: "Ver en Google Maps"
+      },
+      en: {
+        welcome: "Welcome to Paradise Mens Club",
+        slogan: "No Rules, No Limits",
+        reserve: "Book Now",
+        inicio: "Home",
+        clubs: "Clubs",
+        galeria: "Gallery",
+        promociones: "Promotions",
+        eventos: "Events",
+        contacto: "Contact",
+        ubicacion: "Location",
+        footer: "© 2025 Paradise Means Club. All rights reserved.",
+        privacy: "Privacy Policy",
+        tropicanaClub: "Tropicana",
+        saharaClub: "Sahara",
+        paradiseClub: "Paradise",
+        paradiseDescription:
+          "The most exclusive club in the city, with a sophisticated atmosphere and top-notch services.",
+        tropicanaDescription: "",
+        saharaDescription: "",
+        promocion1: "Free Welcome Shot",
+        promocion2: "Free Lap Dance",
+        promocion3: "Free Transportation to the Bar",
+        evento1: "Bachelor Parties",
+        evento2: "Divorces",
+        evento3: "Birthdays",
+        contactoTexto:
+          "For more information, contact us via WhatsApp or visit our Facebook page.",
+        ubicacionTexto: "Find our clubs at the following locations:",
+        paradiseLocation:
+          " Blvd. Francisco Medina Ascencio 1994, Las Glorias, 48333 Puerto Vallarta, Jal.",
+        tropicanaLocation: "Av. Priciliano Sanchez",
+        saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
+        verMapa: "View on Google Maps"
+      }
+    };
+
+    // Función para cambiar el idioma
+    function changeLanguage(lang) {
+      document.querySelector(".hero-content h1").textContent =
+        translations[lang].welcome;
+      document.querySelector(".hero-content p").textContent =
+        translations[lang].slogan;
+      document.querySelector(".btn-custom[data-lang='reserve']").textContent =
+        translations[lang].reserve;
+      document.querySelector("footer p").innerHTML = `${
+        translations[lang].footer
+      } | <a href="#">${translations[lang].privacy}</a>`;
+
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+        const key = element.getAttribute("data-lang");
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+      localStorage.setItem("language", lang);
+    }
+
+    // Inicializa el idioma al cargar la página
+    const savedLanguage = localStorage.getItem("language") || "es";
+    changeLanguage(savedLanguage);
+
+    // Asigna eventos a los botones de cambio de idioma
+    document
+      .getElementById("lang-es")
+      .addEventListener("click", () => changeLanguage("es"));
+    document
+      .getElementById("lang-en")
+      .addEventListener("click", () => changeLanguage("en"));
+
+    // Animaciones con GSAP
+    gsap.to(".hero-content h1", {
+      opacity: 1,
+      y: -20,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.out",
+      textShadow: "0px 0px 10px rgba(219, 172, 41, 0.8)"
+    });
+    gsap.to(".hero-content p", {
+      opacity: 1,
+      y: -10,
+      duration: 1.5,
+      delay: 1,
+      ease: "power3.out",
+      textShadow: "0px 0px 8px rgba(219, 172, 41, 0.6)"
+    });
+    gsap.to(".btn-custom[data-lang='reserve']", {
+      opacity: 1,
+      scale: 1.1,
+      duration: 1.5,
+      delay: 1.5,
+      ease: "elastic.out(1, 0.5)",
+      repeat: -1,
+      yoyo: true,
+      boxShadow: "0px 0px 15px rgba(219, 172, 41, 0.9)"
+    });
+
+    window.addEventListener("scroll", function () {
+      let header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        gsap.to(header, {
+          background: "rgba(10, 10, 10, 0.7)",
+          backdropFilter: "blur(10px)",
+          duration: 0.5
+        });
+      } else {
+        gsap.to(header, {
+          background: "rgba(10, 10, 10, 0.95)",
+          backdropFilter: "blur(0px)",
+          duration: 0.5
+        });
+      }
+    });
+
+    gsap.from(".carousel-item img", {
+      opacity: 0.8,
+      duration: 1.5,
+      ease: "power2.out"
+    });
+
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      var navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll("#nav-links a").forEach((link) => {
+      link.addEventListener("click", function () {
+        if (link.getAttribute("href").startsWith("#")) {
+          if (window.innerWidth <= 767) {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.remove("active");
+          }
+        }
+      });
+    });
+
+    // Submenú en móviles
+    document
+      .querySelector(".has-submenu > a")
+      .addEventListener("click", function (event) {
+        if (window.innerWidth <= 767) {
+          event.preventDefault();
+          this.parentElement.classList.toggle("active");
+        }
+      });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const clubLinks = document.querySelectorAll(".club-link");
+      const mainSections = document.querySelectorAll(
+        "#inicio, #galeria, #promociones, #Eventos, #contacto, #ubicacion"
+      );
+      const clubSections = document.querySelectorAll("#tropicana, #sahara");
+
+      clubLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const clubId = link.getAttribute("data-club");
+
+          // Mostrar la sección principal o secciones de clubes
+          if (clubId === "inicio") {
+            mainSections.forEach((sec) => sec.classList.remove("hidden"));
+            clubSections.forEach((sec) => sec.classList.add("hidden"));
+          } else {
+            mainSections.forEach((sec) => sec.classList.add("hidden"));
+            clubSections.forEach((sec) => sec.classList.add("hidden"));
+            document.getElementById(clubId).classList.remove("hidden");
+          }
+        });
+      });
+    });
+
+    // Código para el slider de la galería (sección principal)
+    document.addEventListener("DOMContentLoaded", function () {
+      const gallerySlider = document.querySelector(".gallery-slider");
+      const btnPrev = document.querySelector(".gallery-prev");
+      const btnNext = document.querySelector(".gallery-next");
+      const galleryItem = document.querySelector(".gallery-item");
+
+      // Calcula el desplazamiento (ancho de una tarjeta + margen)
+      const desplazamiento = galleryItem.offsetWidth + 20;
+
+      btnNext.addEventListener("click", () => {
+        gallerySlider.scrollBy({
+          left: desplazamiento,
+          behavior: "smooth"
+        });
+      });
+
+      btnPrev.addEventListener("click", () => {
+        gallerySlider.scrollBy({
+          left: -desplazamiento,
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
