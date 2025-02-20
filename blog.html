@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título optimizado -->
+  <title>Paradise Mens Club | Bar Exclusivo para Hombres - Striptease, Table Dance & After en Puerto Vallarta</title>
+  <!-- Meta descripción optimizada -->
+  <meta name="description" content="Descubre Paradise Mens Club en Puerto Vallarta, el bar para hombres con striptease, table dance, after y fiestas exclusivas con participación femenina. Vive una experiencia única de lujo, entretenimiento y promociones VIP." />
+  <meta name="keywords" content="bar para hombres, striptease, table dance, after, fiesta, promociones VIP, participación femenina, Puerto Vallarta, Paradise Mens Club" />
+  <link rel="canonical" href="https://paradisemensclubpv.com/blog.html" />
+
+  <!-- Hreflang para versiones multilingües -->
+  <link rel="alternate" hreflang="es" href="https://paradisemensclubpv.com/blog.html" />
+  <link rel="alternate" hreflang="en" href="https://paradisemensclubpv.com/en/blog.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Paradise Mens Club | Bar Exclusivo para Hombres - Striptease, Table Dance & After en Puerto Vallarta" />
+  <meta property="og:description" content="Descubre Paradise Mens Club, el bar para hombres en Puerto Vallarta con striptease, table dance, after y fiestas exclusivas. Vive el lujo y entretenimiento de nuestros shows en vivo." />
+  <meta property="og:url" content="https://paradisemensclubpv.com/blog.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Paradise Mens Club | Bar Exclusivo para Hombres - Striptease, Table Dance & After en Puerto Vallarta" />
+  <meta name="twitter:description" content="Descubre Paradise Mens Club en Puerto Vallarta, el bar para hombres con striptease, table dance, after y fiestas exclusivas. Experimenta un ambiente único de lujo y diversión." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('imagenes/show.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    }
+    header, footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: #cda34f;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #cda34f;
+    }
+    header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    /* Menú de navegación */
+    .logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #cda34f;
+      cursor: pointer;
+    }
+    .language-switcher button {
+      background: none;
+      border: 1px solid #cda34f;
+      color: #cda34f;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+    }
+    .language-switcher button:hover {
+      background: #cda34f;
+      color: #ffd700;
+    }
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #cda34f;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #d4af37;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+    .has-submenu {
+      position: relative;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: transparent;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+      z-index: 1001;
+    }
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+    /* Títulos y textos */
+    h1, h2, h3 {
+      color: #ffd700;
+      font-family: 'Merriweather', serif;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 30px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 25px;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    a {
+      color: #cda34f;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffd700;
+    }
+    .post-meta {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    .blog-img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease;
+    }
+    .blog-img:hover {
+      transform: scale(1.03);
+    }
+    article {
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #333;
+    }
+    footer p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    /* Animación */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Estilos responsivos para móviles */
+    @media (max-width: 768px) {
+      #menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+      }
+      nav.active {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .has-submenu .submenu {
+        position: static;
+        box-shadow: none;
+      }
+    }
+    @media (max-width: 576px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Datos estructurados JSON-LD (opcional) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bienvenido a Paradise Mens Club: La Experiencia Exclusiva en Puerto Vallarta",
+    "datePublished": "2025-02-20",
+    "author": {
+      "@type": "Organization",
+      "name": "Paradise Mens Club"
+    },
+    "description": "Paradise Mens Club es el bar exclusivo para hombres en Puerto Vallarta, con striptease, table dance, after y fiestas exclusivas con participación femenina."
+  }
+  </script>
+</head>
+<body>
+  <!-- Encabezado con menú y selector de idioma -->
+  <header class="fade-in">
+    <div class="logo-container">
+      <div class="logo" data-key="logo">Paradise Mens Club</div>
+      <div class="language-switcher">
+        <button id="lang-es">ES</button>
+        <button id="lang-en">EN</button>
+      </div>
+    </div>
+    <!-- Botón para menú en móviles -->
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav id="nav-links">
+      <ul>
+        <li><a href="https://paradisemensclubpv.com/" class="club-link" data-club="inicio" data-key="nav_home">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="#clubs" data-key="nav_clubs">Clubs</a>
+          <ul class="submenu">
+            <li>
+              <a href="https://paradisemensclubpv.com/" data-key="nav_paradiseClub" class="club-link" data-club="inicio">Paradise</a>
+            </li>
+            <li>
+              <a href="https://paradisemensclubpv.com/" data-key="nav_saharaClub" class="club-link" data-club="sahara">Sahara</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="https://paradisemensclubpv.com/#galeria" data-key="nav_gallery">Galería</a></li>
+        <li><a href="https://paradisemensclubpv.com/#promociones" data-key="nav_promotions">Promociones</a></li>
+        <li><a href="https://paradisemensclubpv.com/#Eventos" data-key="nav_events">Eventos</a></li>
+        <li><a href="https://paradisemensclubpv.com/#contacto" data-key="nav_contact">Contacto</a></li>
+        <li><a href="blog.html" data-key="nav_blog">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container fade-in">
+    <!-- Entrada de Blog -->
+    <article>
+      <!-- Título principal -->
+      <h1 data-key="blog_title">Bienvenido a Paradise Mens Club: La Experiencia Exclusiva en Puerto Vallarta</h1>
+      <p class="post-meta" data-key="blog_meta">Publicado el 20 de febrero de 2025 | Categoría: Bares y Strip Clubs</p>
+      <img src="imagenes/paradisesinfondo_resultado.png" alt="Paradise Mens Club - Bar para hombres con striptease y table dance en Puerto Vallarta" class="blog-img" loading="lazy" />
+      <p data-key="blog_content_1">
+        Paradise Mens Club se ha consolidado como uno de los bares en Puerto Vallarta más exclusivos y solo para hombres. Con un ambiente sofisticado, shows en vivo y promociones imperdibles, nuestro club es el lugar ideal para disfrutar de striptease, table dance, after y fiestas con la participación de mujeres.
+      </p>
+      
+      <h2 data-key="blog_subtitle_1">Un Ambiente Único y Sofisticado</h2>
+      <p data-key="blog_content_2">
+        Ubicado en el corazón de Puerto Vallarta, Paradise Mens Club combina lujo y entretenimiento en un espacio diseñado para sorprender. Nuestro club cuenta con un equipo profesional y una decoración elegante que refleja la esencia de un gentlemen club de primer nivel.
+      </p>
+      
+      <h2 data-key="blog_subtitle_2">Eventos y Promociones Exclusivas</h2>
+      <p data-key="blog_content_3">
+        Cada noche es especial: desde despedidas de soltero hasta fiestas privadas, con promociones como "Shot de Bienvenida Gratis" o baile gratis, aseguramos una experiencia de striptease y table dance de alta calidad.
+      </p>
+      
+      <h2 data-key="blog_subtitle_3">Historias y Testimonios VIP</h2>
+      <p data-key="blog_content_4">
+        Los clientes comparten sus experiencias y destacan la calidad de los espectáculos, la atención personalizada y el ambiente vibrante. En Paradise Mens Club, cada show es una oportunidad para vivir una noche inolvidable llena de energía y exclusividad.
+      </p>
+      
+      <h2 data-key="blog_subtitle_4">Innovación y Seguridad en Cada Evento</h2>
+      <p data-key="blog_content_5">
+        Nuestro compromiso es ofrecer no solo entretenimiento de primera, sino también un entorno seguro y moderno. Con sistemas de iluminación de última generación y medidas de seguridad rigurosas, garantizamos la mejor experiencia nocturna en Puerto Vallarta.
+      </p>
+      
+      <h2 data-key="blog_subtitle_5">Historia y Evolución del Club</h2>
+      <p data-key="blog_content_6">
+        Desde sus inicios, Paradise Mens Club ha evolucionado adaptándose a las tendencias y necesidades de un público exigente. La mezcla de tradiciones del striptease clásico y la innovación en table dance y after ha hecho del club un referente en el sector del entretenimiento para hombres.
+      </p>
+      
+      <h2 data-key="blog_subtitle_6">Visítanos y Vive la Experiencia</h2>
+      <p data-key="blog_content_7">
+        Si buscas un lugar donde el entretenimiento, el lujo y las promociones exclusivas se fusionen, <a href="https://paradisemensclubpv.com/" target="_blank">Paradise Mens Club</a> es tu mejor opción en Puerto Vallarta. Descubre nuestras noches temáticas, eventos VIP y la pasión por el espectáculo en cada rincón del club.
+      </p>
+      
+      <h3>Preguntas Frecuentes (FAQ)</h3>
+      <p>
+        <strong>¿Qué tipo de espectáculos puedo disfrutar?</strong><br>
+        En Paradise Mens Club podrás disfrutar de una variedad de shows en vivo, incluyendo striptease, table dance y after con presentaciones de alto nivel.
+      </p>
+      <h3>Preguntas Frecuentes (FAQ)</h3>
+      <p>
+        <strong>¿Existen promociones especiales?</strong><br>
+        Sí, en Paradise Mens Club ofrecemos servicio de transporte gratis al club y Shot y baile gratis de bienvenida. Para más detalles, <a href="https://paradisemensclubpv.com/" target="_blank">vístanos</a>.
+      </p>
+      
+    </article>
+  </div>
+  
+  <footer class="fade-in">
+    <p data-key="footer_text">&copy; 2025 Paradise Mens Club. Todos los derechos reservados.</p>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const translations = {
+      es: {
+        page_title: "Paradise Mens Club | Bar Exclusivo para Hombres - Striptease, Table Dance & After en Puerto Vallarta",
+        logo: "Paradise Mens Club",
+        nav_home: "Inicio",
+        nav_clubs: "Clubs",
+        nav_paradiseClub: "Paradise",
+        nav_saharaClub: "Sahara",
+        nav_gallery: "Galería",
+        nav_promotions: "Promociones",
+        nav_events: "Eventos",
+        nav_contact: "Contacto",
+        nav_blog: "Blog",
+        blog_title: "Bienvenido a Paradise Mens Club: La Experiencia Exclusiva en Puerto Vallarta",
+        blog_meta: "Publicado el 20 de febrero de 2025 | Categoría: Bares y Strip Clubs",
+        blog_content_1: "Paradise Mens Club se ha consolidado como uno de los bares en Puerto Vallarta más exclusivos y solo para hombres. Con un ambiente sofisticado, shows en vivo y promociones imperdibles, nuestro club es el lugar ideal para disfrutar de striptease, table dance, after y fiestas con la participación de mujeres.",
+        blog_subtitle_1: "Un Ambiente Único y Sofisticado",
+        blog_content_2: "Ubicado en el corazón de Puerto Vallarta, Paradise Mens Club combina lujo y entretenimiento en un espacio diseñado para sorprender. Nuestro club cuenta con un equipo profesional y una decoración elegante que refleja la esencia de un gentlemen club de primer nivel.",
+        blog_subtitle_2: "Eventos y Promociones Exclusivas",
+        blog_content_3: "Cada noche es especial: desde despedidas de soltero hasta fiestas privadas, con promociones como 'Shot de Bienvenida Gratis' o baile gratis, aseguramos una experiencia de striptease y table dance de alta calidad.",
+        blog_subtitle_3: "Historias y Testimonios VIP",
+        blog_content_4: "Los clientes comparten sus experiencias y destacan la calidad de los espectáculos, la atención personalizada y el ambiente vibrante. En Paradise Mens Club, cada show es una oportunidad para vivir una noche inolvidable llena de energía y exclusividad.",
+        blog_subtitle_4: "Innovación y Seguridad en Cada Evento",
+        blog_content_5: "Nuestro compromiso es ofrecer no solo entretenimiento de primera, sino también un entorno seguro y moderno. Con sistemas de iluminación de última generación y medidas de seguridad rigurosas, garantizamos la mejor experiencia nocturna en Puerto Vallarta.",
+        blog_subtitle_5: "Historia y Evolución del Club",
+        blog_content_6: "Desde sus inicios, Paradise Mens Club ha evolucionado adaptándose a las tendencias y necesidades de un público exigente. La mezcla de tradiciones del striptease clásico y la innovación en table dance y after ha hecho del club un referente en el sector del entretenimiento para hombres.",
+        blog_subtitle_6: "Visítanos y Vive la Experiencia",
+        blog_content_7: "Si buscas un lugar donde el entretenimiento, el lujo y las promociones exclusivas se fusionen, Paradise Mens Club es tu mejor opción en Puerto Vallarta. Descubre nuestras noches temáticas, eventos VIP y la pasión por el espectáculo en cada rincón del club.",
+        footer_text: "&copy; 2025 Paradise Mens Club. Todos los derechos reservados."
+      },
+      en: {
+        page_title: "Paradise Mens Club | Exclusive Men's Bar - Striptease, Table Dance & After in Puerto Vallarta",
+        logo: "Paradise Mens Club",
+        nav_home: "Home",
+        nav_clubs: "Clubs",
+        nav_paradiseClub: "Paradise",
+        nav_saharaClub: "Sahara",
+        nav_gallery: "Gallery",
+        nav_promotions: "Promotions",
+        nav_events: "Events",
+        nav_contact: "Contact",
+        nav_blog: "Blog",
+        blog_title: "Welcome to Paradise Mens Club: The Exclusive Experience in Puerto Vallarta",
+        blog_meta: "Published on February 20, 2025 | Category: Bars and Strip Clubs",
+        blog_content_1: "Paradise Mens Club has established itself as one of the most exclusive men's bars in Puerto Vallarta. With a sophisticated ambiance, live shows and unmissable promotions, our club is the ideal place to enjoy striptease, table dance, after and parties featuring female performances.",
+        blog_subtitle_1: "A Unique and Sophisticated Atmosphere",
+        blog_content_2: "Located in the heart of Puerto Vallarta, Paradise Mens Club combines luxury and entertainment in a space designed to impress. Our club features a professional team and elegant decor that reflects the essence of a top-level gentlemen's club.",
+        blog_subtitle_2: "Exclusive Events and Promotions",
+        blog_content_3: "Every night is special: from bachelor parties to private events, with promotions like 'Free Welcome Shot' or free dance, ensuring a high-quality striptease and table dance experience.",
+        blog_subtitle_3: "VIP Stories and Testimonials",
+        blog_content_4: "Our guests share their experiences, highlighting the quality of the shows, personalized service, and vibrant atmosphere that make each performance unforgettable.",
+        blog_subtitle_4: "Innovation and Security at Every Event",
+        blog_content_5: "Our commitment is not only to offer first-rate entertainment but also to provide a safe, modern environment. With state-of-the-art lighting and rigorous security measures, we guarantee the best nightlife experience in Puerto Vallarta.",
+        blog_subtitle_5: "Club History and Evolution",
+        blog_content_6: "Since its inception, Paradise Mens Club has evolved by adapting to the latest trends and the needs of a discerning audience. The blend of classic striptease traditions with innovative table dance and after shows has made the club a benchmark in men's entertainment.",
+        blog_subtitle_6: "Visit Us and Experience the Difference",
+        blog_content_7: "If you're looking for a place where entertainment, luxury, and exclusive promotions merge, Paradise Mens Club is your top choice in Puerto Vallarta. Discover our themed nights, VIP events, and passion for spectacular performances.",
+        footer_text: "&copy; 2025 Paradise Mens Club. All rights reserved."
+      }
+    };
+
+    function translatePage(lang) {
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+    }
+
+    document.getElementById('lang-es').addEventListener('click', () => {
+      translatePage('es');
+    });
+
+    document.getElementById('lang-en').addEventListener('click', () => {
+      translatePage('en');
+    });
+
+    // Establecer idioma por defecto
+    translatePage('es');
+
+    // Función para desplegar/ocultar el menú en móviles
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
