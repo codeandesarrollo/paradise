@@ -672,147 +672,202 @@ footer a:hover {
   cursor: pointer;
 }
 
-/* ====================== MEDIA QUERY PARA MÓVILES ====================== */
-@media (max-width: 767px) {
-  header {
-    position: relative;
-    padding: 10px 20px;
-    width: 100%;
-  }
-  body.menu-open {
-  overflow: hidden;
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-}
 
-  
-  
-  .logo-container {
-    display: flex;
+/* ====================== MEDIA QUERY PARA MÓVILES (max-width: 767px) ====================== */
+@media (max-width: 767px) {
+  /* Header fijo en la parte superior */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    gap: 10px;
+    background: rgba(0, 0, 0, 0.9) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
   }
-  
+
+  /* Cuando el body tiene "menu-open", se bloquea el scroll (opcional) */
+  body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed; /* Evita que se desplace el contenido de fondo */
+    width: 100%;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background: transparent !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Botón hamburguesa */
   #menu-toggle {
-    display: block;
-    position: relative;
-    top: auto;
-    right: auto;
-    margin-left: 10px;
+    display: block;   /* Se muestra el botón en móvil */
     font-size: 2rem;
     background: none;
     border: none;
     color: #cda34f;
     cursor: pointer;
+    position: relative; /* Para no solaparse con nada */
+    margin-left: auto;  /* Lo empujamos hacia la derecha */
+    z-index: 1100;      /* Más alto que el menú lateral */
   }
-  
+
+  /* Menú lateral tipo “side-drawer” */
+  nav#nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;                 /* Comienza cerrado */
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(0,0,0,0.95);
+    transition: width 0.4s ease; /* Efecto deslizado */
+    z-index: 1001;
+    padding-top: 80px;           /* Deja espacio para que no se oculte detrás del header */
+    display: flex;
+    flex-direction: column;      /* Links en vertical */
+    align-items: flex-start;     /* Alineados a la izquierda */
+  }
+
+  /* Cuando se activa, se abre el panel lateral */
+  nav#nav-links.active {
+    width: 250px; /* Ajusta a tu gusto */
+  }
+
+  /* Ajustes de <ul> y <li> dentro del side-drawer */
+    nav#nav-links ul {
+    display: flex;
+    flex-direction: column; /* Apila en columna */
+    width: 100%;
+  }
+
+  nav#nav-links ul li {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav#nav-links ul li a {
+    display: block;
+    padding: 10px 15px;
+  }
+
+  nav#nav-links ul li a:hover {
+    color: #ffd700;
+  }
+
+  /* Si manejas submenús, podrías usar un pequeño acordeón en vez de :hover */
+  .submenu {
+    position: static; /* Elimina la posición absoluta */
+    display: none; /* Oculto por defecto */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding-left: 15px;
+  }
+  .submenu li {
+    width: 100%;
+  }
+  .submenu li a {
+    display: block;
+    padding: 8px 15px;
+  }
+  .submenu li {
+    width: 100%;
+  }
+  .submenu li a {
+    display: block;
+    padding: 8px 15px;
+  }
+  .has-submenu.active .submenu {
+    display: block;
+  }
+  /* Ajustes extra del resto de secciones en móvil */
   .carousel-container {
     height: 40vh;
+    
   }
-  
+
   #inicio.hero {
     margin-bottom: 30px;
   }
-  
   .hero-content {
-    top: 30%;
+    top: 15%;
     transform: translate(-50%, -40%);
-  }
-  
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+    font-size: 0.9rem; 
     text-align: center;
-    background: transparent;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    padding: 5px 0;
-    z-index: 1000;
   }
-  
-  #nav-links.active {
-    display: flex;
-  }
-  
-  nav ul li {
-    margin: 10px 0;
-  }
-  
   .hero-content h1 {
     font-size: 2rem;
   }
-  
   .hero-content p {
     font-size: 1rem;
   }
-  
+
   .btn-custom {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
-  
+
   .language-switcher {
-    flex-direction: column;
-    gap: 5px;
+    /* Oculta o reacomoda los botones de idioma en móvil */
+    display: none;
   }
-  
-  
-  .language-switcher button {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-    border-radius: 3px;
-  }
-  
-  .logos-section .row {
-    justify-content: flex-end; /* Mueve los elementos hacia la derecha */
-    padding-right: 25%; /* Ajusta el margen derecho */
-  }
-
-  .logo-container-logos {
-    margin: 0 48px; /* Añade margen lateral para evitar que se peguen demasiado */
-  }
-
 
   .promociones-section,
   .ubicacion-section {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .club-card,
   .promocion-card,
   .ubicacion-card {
     width: 90%;
   }
-  
+
   .gallery-item {
     width: 90%;
     height: 150px;
   }
-  
+
   .contact-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .sahara-carousel-container {
     width: 90%;
   }
-  
-  .content-below-carousel {
-    padding: 10px 10px;
-  }
-  
+
+/* Reducir el espacio entre el hero y la galería */
+.content-below-carousel {
+  padding-top: 150px; /* Antes podría ser 40px o más, reduce este valor */
+  margin-top: -150px; /* Usa un margen negativo para acercarlo más */
+}
+
+
   section {
     margin: 0;
   }
 
+  /* Opcional: ajusta posición y estilo de logos en móvil */
+  .logos-section .row {
+    justify-content: center;
+    padding-right: 0;
+  }
+  .logo-container-logos {
+    margin: 10px;
+  }
 }
+
 
 
   </style>
@@ -1116,291 +1171,318 @@ footer a:hover {
   </div>
 
   <!-- ====================== SCRIPTS ====================== -->
-  <script>
-    // Traducciones en español e inglés
-    const translations = {
-      es: {
-        welcome: "Bienvenido a Paradise ",
-        slogan: "No Rules, No Limits",
-        reserve: "Reserva",
-        inicio: "Inicio",
-        clubs: "Clubs",
-        galeria: "Galería",
-        promociones: "Promociones",
-        eventos: "Eventos",
-        contacto: "Contacto",
-        ubicacion: "Ubicación",
-        footer: "© 2025 Paradise Mens Club. Todos los derechos reservados.",
-        privacy: "Política de privacidad",
-        tropicanaClub: "Tropicana",
-        saharaClub: "Sahara",
-        paradiseClub: "Paradise",
-        paradiseDescription: "El club más exclusivo de la ciudad, con un ambiente sofisticado y servicios de primera.",
-        tropicanaDescription: "",
-        saharaDescription: "",
-        promocion1: "Shot de Bienvenida Gratis",
-        promocion2: "Baile Gratis",
-        promocion3: "Transporte Sin costo al Bar",
-        evento1: "Despedidas De Solteros",
-        evento2: "Divorcios",
-        evento3: "Cumpleaños",
-        contactoTexto: "Para más información, contáctanos a través de WhatsApp o visita nuestra página de Facebook.",
-        ubicacionTexto: "Encuentra nuestros clubs en las siguientes ubicaciones:",
-        paradiseLocation: "Blvd. Francisco Medina Ascencio 1994, Las Glorias, 48333 Puerto Vallarta, Jal.",
-        tropicanaLocation: "Av. Priciliano Sanchez",
-        saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
-        verMapa: "Ver en Google Maps",
-        clubsHeading: "Nuestros Clubs",
-        sponsorsHeading: "Patrocinadores"
-      },
-      en: {
-        welcome: "Welcome to Paradise ",
-        slogan: "No Rules, No Limits",
-        reserve: "Book Now",
-        inicio: "Home",
-        clubs: "Clubs",
-        galeria: "Gallery",
-        promociones: "Promotions",
-        eventos: "Events",
-        contacto: "Contact",
-        ubicacion: "Location",
-        footer: "© 2025 Paradise Mens Club. All rights reserved.",
-        privacy: "Privacy Policy",
-        tropicanaClub: "Tropicana",
-        saharaClub: "Sahara",
-        paradiseClub: "Paradise",
-        paradiseDescription: "The most exclusive club in the city, with a sophisticated atmosphere and top-notch services.",
-        tropicanaDescription: "",
-        saharaDescription: "",
-        promocion1: "Free Welcome Shot",
-        promocion2: "Free Lap Dance",
-        promocion3: "Free Transportation to the Bar",
-        evento1: "Bachelor Parties",
-        evento2: "Divorces",
-        evento3: "Birthdays",
-        contactoTexto: "For more information, contact us via WhatsApp or visit our Facebook page.",
-        ubicacionTexto: "Find our clubs at the following locations:",
-        paradiseLocation: "Blvd. Francisco Medina Ascencio 1994, Las Glorias, 48333 Puerto Vallarta, Jal.",
-        tropicanaLocation: "Av. Priciliano Sanchez",
-        saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
-        verMapa: "View on Google Maps",
-        clubsHeading: "Our Clubs",
-        sponsorsHeading: "Sponsors"
-      }
-    };
-
-    function changeLanguage(lang) {
-      document.querySelector(".hero-content h1").textContent = translations[lang].welcome;
-      document.querySelector(".hero-content p").textContent = translations[lang].slogan;
-      document.querySelector(".btn-custom[data-lang='reserve']").textContent = translations[lang].reserve;
-      document.querySelector("footer p").innerHTML = `${translations[lang].footer} | <a href="#">${translations[lang].privacy}</a>`;
-      document.querySelectorAll("[data-lang]").forEach((element) => {
-        const key = element.getAttribute("data-lang");
-        if (translations[lang][key]) {
-          element.textContent = translations[lang][key];
-        }
-      });
-      localStorage.setItem("language", lang);
+<script>
+  // ====================== TRADUCCIONES ====================== //
+  const translations = {
+    es: {
+      welcome: "Bienvenido a Paradise ",
+      slogan: "No Rules, No Limits",
+      reserve: "Reserva",
+      inicio: "Inicio",
+      clubs: "Clubs",
+      galeria: "Galería",
+      promociones: "Promociones",
+      eventos: "Eventos",
+      contacto: "Contacto",
+      ubicacion: "Ubicación",
+      footer: "© 2025 Paradise Mens Club. Todos los derechos reservados.",
+      privacy: "Política de privacidad",
+      tropicanaClub: "Tropicana",
+      saharaClub: "Sahara",
+      paradiseClub: "Paradise",
+      paradiseDescription: "El club más exclusivo de la ciudad...",
+      tropicanaDescription: "",
+      saharaDescription: "",
+      promocion1: "Shot de Bienvenida Gratis",
+      promocion2: "Baile Gratis",
+      promocion3: "Transporte Sin costo al Bar",
+      evento1: "Despedidas De Solteros",
+      evento2: "Divorcios",
+      evento3: "Cumpleaños",
+      contactoTexto: "Para más información...",
+      ubicacionTexto: "Encuentra nuestros clubs...",
+      paradiseLocation: "Blvd. Francisco Medina Ascencio 1994...",
+      tropicanaLocation: "Av. Priciliano Sanchez",
+      saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
+      verMapa: "Ver en Google Maps",
+      clubsHeading: "Nuestros Clubs",
+      sponsorsHeading: "Patrocinadores"
+    },
+    en: {
+      welcome: "Welcome to Paradise ",
+      slogan: "No Rules, No Limits",
+      reserve: "Book Now",
+      inicio: "Home",
+      clubs: "Clubs",
+      galeria: "Gallery",
+      promociones: "Promotions",
+      eventos: "Events",
+      contacto: "Contact",
+      ubicacion: "Location",
+      footer: "© 2025 Paradise Mens Club. All rights reserved.",
+      privacy: "Privacy Policy",
+      tropicanaClub: "Tropicana",
+      saharaClub: "Sahara",
+      paradiseClub: "Paradise",
+      paradiseDescription: "The most exclusive club in the city...",
+      tropicanaDescription: "",
+      saharaDescription: "",
+      promocion1: "Free Welcome Shot",
+      promocion2: "Free Lap Dance",
+      promocion3: "Free Transportation to the Bar",
+      evento1: "Bachelor Parties",
+      evento2: "Divorces",
+      evento3: "Birthdays",
+      contactoTexto: "For more information...",
+      ubicacionTexto: "Find our clubs...",
+      paradiseLocation: "Blvd. Francisco Medina Ascencio 1994...",
+      tropicanaLocation: "Av. Priciliano Sanchez",
+      saharaLocation: "Boulevard 789, Colonia Reforma, Monterrey",
+      verMapa: "View on Google Maps",
+      clubsHeading: "Our Clubs",
+      sponsorsHeading: "Sponsors"
     }
+  };
+
+  // ====================== FUNCIÓN DE CAMBIO DE IDIOMA ====================== //
+  function changeLanguage(lang) {
+    document.querySelector(".hero-content h1").textContent = translations[lang].welcome;
+    document.querySelector(".hero-content p").textContent = translations[lang].slogan;
+    document.querySelector(".btn-custom[data-lang='reserve']").textContent = translations[lang].reserve;
+    // Cambiamos el contenido del footer con innerHTML (para incluir el link)
+    document.querySelector("footer p").innerHTML = `${translations[lang].footer} | <a href="#">${translations[lang].privacy}</a>`;
+
+    // Reemplaza en todos los elementos con [data-lang="..."]
+    document.querySelectorAll("[data-lang]").forEach((element) => {
+      const key = element.getAttribute("data-lang");
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Guardamos la preferencia en localStorage
+    localStorage.setItem("language", lang);
+  }
+
+  // ====================== DOMContentLoaded (INICIO) ====================== //
+  document.addEventListener("DOMContentLoaded", () => {
+    // --- 1. Idioma guardado (o 'es' por defecto) ---
     const savedLanguage = localStorage.getItem("language") || "es";
     changeLanguage(savedLanguage);
+
+    // Botones de idioma
     document.getElementById("lang-es").addEventListener("click", () => changeLanguage("es"));
     document.getElementById("lang-en").addEventListener("click", () => changeLanguage("en"));
 
-    // Animaciones con GSAP
-    gsap.to(".hero-content h1", {
-      opacity: 1,
-      y: -20,
-      duration: 1.5,
-      delay: 0.5,
-      ease: "power3.out",
-      textShadow: "0px 0px 10px rgba(205, 163, 79, 0.8)"
-    });
-    gsap.to(".hero-content p", {
-      opacity: 1,
-      y: -10,
-      duration: 1.5,
-      delay: 1,
-      ease: "power3.out",
-      textShadow: "0px 0px 8px rgba(205, 163, 79, 0.6)"
-    });
-    gsap.to(".btn-custom[data-lang='reserve']", {
-      opacity: 1,
-      scale: 1.1,
-      duration: 1.5,
-      delay: 1.5,
-      ease: "elastic.out(1, 0.5)",
-      repeat: -1,
-      yoyo: true,
-      boxShadow: "0px 0px 15px rgba(205, 163, 79, 0.9)"
-    });
+    // --- 2. Menú hamburguesa (side-drawer) ---
+    const navLinks = document.getElementById("nav-links");
+    const menuToggle = document.getElementById("menu-toggle");
 
-    let throttleTimer;
-    window.addEventListener("scroll", function () {
-      if (throttleTimer) return;
-      throttleTimer = setTimeout(() => {
-        let header = document.querySelector("header");
-        if (window.scrollY > 50) {
-          gsap.to(header, { background: "rgba(0, 0, 0, 0.7)", backdropFilter: "blur(10px)", duration: 0.5 });
-        } else {
-          gsap.to(header, { background: "rgba(0, 0, 0, 0.85)", backdropFilter: "blur(0px)", duration: 0.5 });
-        }
-        throttleTimer = null;
-      }, 100);
-    });
-
-    gsap.from(".carousel-item img", {
-      opacity: 0.8,
-      duration: 1.5,
-      ease: "power2.out"
-    });
-
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-      var navLinks = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => {
+      // Alterna la clase .active para abrir/cerrar el menú lateral
       navLinks.classList.toggle("active");
+
+      // Bloquea o desbloquea el scroll del body
+      if (navLinks.classList.contains("active")) {
+        document.body.classList.add("menu-open");
+      } else {
+        document.body.classList.remove("menu-open");
+      }
     });
 
+    // Al hacer click en cualquier enlace del menú (que no sea submenú):
     document.querySelectorAll("#nav-links a").forEach((link) => {
       link.addEventListener("click", function () {
+        // Si no es un .club-link y es ancla interna, cerramos el menú en pantallas pequeñas
         if (!link.classList.contains("club-link") && link.getAttribute("href").startsWith("#")) {
           if (window.innerWidth <= 767) {
-            document.getElementById("nav-links").classList.remove("active");
+            navLinks.classList.remove("active");
+            document.body.classList.remove("menu-open");
           }
         }
       });
     });
 
+    // --- 3. Submenús / Acordeón en móvil ---
     document.querySelector(".has-submenu > a").addEventListener("click", function (event) {
       if (window.innerWidth <= 767) {
         event.preventDefault();
+        // Alterna la clase .active en el padre (li.has-submenu)
         this.parentElement.classList.toggle("active");
       }
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const clubLinks = document.querySelectorAll(".club-link");
-      const mainSections = document.querySelectorAll("#inicio, #galeria, #promociones, #Eventos, #contacto, #ubicacion");
-      const clubSections = document.querySelectorAll("#tropicana, #sahara");
-      clubLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          if (window.innerWidth <= 767) {
-            document.getElementById("nav-links").classList.remove("active");
-          }
-          const clubId = link.getAttribute("data-club");
-          if (clubId === "inicio") {
-            mainSections.forEach((sec) => sec.classList.remove("hidden"));
-            clubSections.forEach((sec) => sec.classList.add("hidden"));
-          } else {
-            mainSections.forEach((sec) => sec.classList.add("hidden"));
-            clubSections.forEach((sec) => sec.classList.add("hidden"));
-            document.getElementById(clubId).classList.remove("hidden");
-          }
-        });
+    // --- 4. Lógica para cambiar secciones (club links) ---
+    const clubLinks = document.querySelectorAll(".club-link");
+    const mainSections = document.querySelectorAll("#inicio, #galeria, #promociones, #Eventos, #contacto, #ubicacion");
+    const clubSections = document.querySelectorAll("#tropicana, #sahara");
+
+    clubLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Cierra menú en pantallas pequeñas
+        if (window.innerWidth <= 767) {
+          navLinks.classList.remove("active");
+          document.body.classList.remove("menu-open");
+        }
+
+        // Muestra/oculta secciones según el "data-club"
+        const clubId = link.getAttribute("data-club");
+        if (clubId === "inicio") {
+          mainSections.forEach((sec) => sec.classList.remove("hidden"));
+          clubSections.forEach((sec) => sec.classList.add("hidden"));
+        } else {
+          mainSections.forEach((sec) => sec.classList.add("hidden"));
+          clubSections.forEach((sec) => sec.classList.add("hidden"));
+          document.getElementById(clubId).classList.remove("hidden");
+        }
       });
     });
 
-    // Slider de galería con botones y soporte para gestos táctiles
-    document.addEventListener("DOMContentLoaded", function () {
-      const gallerySlider = document.querySelector(".gallery-slider");
+    // --- 5. Slider de galería (con botones y gestos táctiles) ---
+    const gallerySlider = document.querySelector(".gallery-slider");
+    if (gallerySlider) { // Asegura que exista en el DOM
       const btnPrev = document.querySelector(".gallery-prev");
       const btnNext = document.querySelector(".gallery-next");
       const galleryItem = document.querySelector(".gallery-item");
-      const desplazamiento = galleryItem.offsetWidth + 20;
-      btnNext.addEventListener("click", () => {
-        gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
-      });
-      btnPrev.addEventListener("click", () => {
-        gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
-      });
-      
-      // Soporte básico para gestos táctiles en el slider
-      let touchStartX = 0;
-      let touchEndX = 0;
-      gallerySlider.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-      gallerySlider.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const swipeDistance = touchEndX - touchStartX;
-        if (Math.abs(swipeDistance) > 50) {
-          if (swipeDistance < 0) {
-            gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
-          } else {
-            gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
-          }
-        }
-      });
-    });
 
-    // ====================== LIGHTBOX ====================== //
-    document.addEventListener("DOMContentLoaded", () => {
-      const galleryItems = Array.from(document.querySelectorAll(".gallery-item img"));
-      const lightboxOverlay = document.getElementById("lightboxOverlay");
-      const lightboxImage = document.getElementById("lightboxImage");
-      const lightboxClose = document.getElementById("lightboxClose");
-      const lightboxPrev = document.getElementById("lightboxPrev");
-      const lightboxNext = document.getElementById("lightboxNext");
+      if (galleryItem) {
+        const desplazamiento = galleryItem.offsetWidth + 20;
 
-      let currentIndex = 0;
-
-      // Función para abrir el lightbox con la imagen correspondiente
-      const openLightbox = (index) => {
-        currentIndex = index;
-        lightboxImage.src = galleryItems[currentIndex].src;
-        lightboxOverlay.classList.add("active");
-      };
-
-      // Función para cerrar el lightbox
-      const closeLightbox = () => {
-        lightboxOverlay.classList.remove("active");
-      };
-
-      // Función para mostrar la imagen anterior
-      const showPrevImage = () => {
-        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-        lightboxImage.src = galleryItems[currentIndex].src;
-      };
-
-      // Función para mostrar la siguiente imagen
-      const showNextImage = () => {
-        currentIndex = (currentIndex + 1) % galleryItems.length;
-        lightboxImage.src = galleryItems[currentIndex].src;
-      };
-
-      // Asignar evento click a cada imagen de la galería
-      galleryItems.forEach((img, index) => {
-        img.style.cursor = "pointer"; // Opcional: cambiar el cursor para indicar que es clickable
-        img.addEventListener("click", () => {
-          openLightbox(index);
+        btnNext.addEventListener("click", () => {
+          gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
         });
-      });
+        btnPrev.addEventListener("click", () => {
+          gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
+        });
 
-      // Eventos para los botones del lightbox
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightboxPrev.addEventListener("click", showPrevImage);
-      lightboxNext.addEventListener("click", showNextImage);
+        // Gestos táctiles
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-      // Cerrar lightbox al hacer clic fuera de la imagen (opcional)
-      lightboxOverlay.addEventListener("click", (e) => {
-        if (e.target === lightboxOverlay) {
-          closeLightbox();
-        }
-      });
+        gallerySlider.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
 
-      // Navegación con teclado (opcional)
-      document.addEventListener("keydown", (e) => {
-        if (!lightboxOverlay.classList.contains("active")) return;
-        if (e.key === "ArrowLeft") {
-          showPrevImage();
-        } else if (e.key === "ArrowRight") {
-          showNextImage();
-        } else if (e.key === "Escape") {
-          closeLightbox();
-        }
+        gallerySlider.addEventListener("touchend", (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const swipeDistance = touchEndX - touchStartX;
+          if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance < 0) {
+              gallerySlider.scrollBy({ left: desplazamiento, behavior: "smooth" });
+            } else {
+              gallerySlider.scrollBy({ left: -desplazamiento, behavior: "smooth" });
+            }
+          }
+        });
+      }
+    }
+
+    // --- 6. LIGHTBOX ---
+    const galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+    const lightboxOverlay = document.getElementById("lightboxOverlay");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    let currentIndex = 0;
+
+    // Funciones para lightbox
+    const openLightbox = (index) => {
+      currentIndex = index;
+      lightboxImage.src = galleryImages[currentIndex].src;
+      lightboxOverlay.classList.add("active");
+    };
+
+    const closeLightbox = () => {
+      lightboxOverlay.classList.remove("active");
+    };
+
+    const showPrevImage = () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImage.src = galleryImages[currentIndex].src;
+    };
+
+    const showNextImage = () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      lightboxImage.src = galleryImages[currentIndex].src;
+    };
+
+    // Eventos a las imágenes
+    galleryImages.forEach((img, index) => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        openLightbox(index);
       });
     });
-  </script>
+
+    // Botones del lightbox
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightboxPrev?.addEventListener("click", showPrevImage);
+    lightboxNext?.addEventListener("click", showNextImage);
+
+    // Cerrar lightbox al click fuera de la imagen
+    lightboxOverlay?.addEventListener("click", (e) => {
+      if (e.target === lightboxOverlay) {
+        closeLightbox();
+      }
+    });
+
+    // Navegación con teclado (opcional)
+    document.addEventListener("keydown", (e) => {
+      if (!lightboxOverlay?.classList.contains("active")) return;
+      if (e.key === "ArrowLeft") showPrevImage();
+      else if (e.key === "ArrowRight") showNextImage();
+      else if (e.key === "Escape") closeLightbox();
+    });
+  });
+
+  // ====================== ANIMACIONES AL CARGAR (FUERA DEL DOMContentLoaded) ====================== //
+  // (Puedes mantenerlo afuera o dentro del evento, como prefieras)
+  gsap.to(".hero-content h1", {
+    opacity: 1,
+    y: -20,
+    duration: 1.5,
+    delay: 0.5,
+    ease: "power3.out",
+    textShadow: "0px 0px 10px rgba(205, 163, 79, 0.8)"
+  });
+  gsap.to(".hero-content p", {
+    opacity: 1,
+    y: -10,
+    duration: 1.5,
+    delay: 1,
+    ease: "power3.out",
+    textShadow: "0px 0px 8px rgba(205, 163, 79, 0.6)"
+  });
+  gsap.to(".btn-custom[data-lang='reserve']", {
+    opacity: 1,
+    scale: 1.1,
+    duration: 1.5,
+    delay: 1.5,
+    ease: "elastic.out(1, 0.5)",
+    repeat: -1,
+    yoyo: true,
+    boxShadow: "0px 0px 15px rgba(205, 163, 79, 0.9)"
+  });
+
+  // Ajuste del header en scroll
+  let throttleTimer;
+  window.addEventListener("scroll", function () {
+    if (throttleTimer) return;
+    throttleTimer = setTimeout(() => {
+      let header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        gsap.to(header, { background: "rgba(0, 0, 0, 0.7)", backdropFilter: "blur(10px)", duration: 0.5 });
+      } else {
+        gsap.to(header, { background: "rgba(0, 0, 0, 0.85)", backdropFilter: "blur(0px)", duration: 0.5 });
+      }
+      throttleTimer = null;
+    }, 100);
+  });
+</script>
+
 
 </body>
 </html>
