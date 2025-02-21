@@ -723,27 +723,25 @@ footer a:hover {
   }
   
   #nav-links {
-  /* En vez de position: absolute, usamos fixed */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* ocupa toda la pantalla */
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 9999; /* que esté por encima de todo */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centra verticalmente */
-  align-items: center;     /* centra horizontalmente */
-  transform: translateY(-100%); /* inicial: oculto por encima */
-  transition: transform 0.3s ease;
-  overflow-y: auto; /* si tienes muchos links, permite scroll */
-}
-
-/* Cuando se active el menú, movemos todo hacia abajo para mostrarlo */
-#nav-links.active {
-  transform: translateY(0);
-}
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding: 5px 0;
+    z-index: 1000;
+  }
+  
+  #nav-links.active {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
   
   .hero-content h1 {
     font-size: 2rem;
