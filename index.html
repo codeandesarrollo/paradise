@@ -766,8 +766,10 @@ footer a:hover {
 
   /* Si manejas submenús, podrías usar un pequeño acordeón en vez de :hover */
   .submenu {
-    position: static; /* Elimina la posición absoluta */
-    display: none; /* Oculto por defecto */
+    position: static;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
     padding-left: 15px;
@@ -787,7 +789,7 @@ footer a:hover {
     padding: 8px 15px;
   }
   .has-submenu.active .submenu {
-    display: block;
+    max-height: 500px; /* Ajusta este valor según el contenido */
   }
   /* Ajustes extra del resto de secciones en móvil */
   .carousel-container {
@@ -1292,16 +1294,21 @@ footer a:hover {
 
     // Al hacer click en cualquier enlace del menú (que no sea submenú):
     document.querySelectorAll("#nav-links a").forEach((link) => {
-      link.addEventListener("click", function () {
-        // Si no es un .club-link y es ancla interna, cerramos el menú en pantallas pequeñas
-        if (!link.classList.contains("club-link") && link.getAttribute("href").startsWith("#")) {
-          if (window.innerWidth <= 767) {
-            navLinks.classList.remove("active");
-            document.body.classList.remove("menu-open");
-          }
-        }
-      });
-    });
+  link.addEventListener("click", function () {
+    // Si el enlace pertenece a un elemento que tiene submenú (por ejemplo, "Clubs"),
+    // no cerramos el menú, ya que se espera que se despliegue el submenú.
+    if (this.parentElement.classList.contains("has-submenu")) {
+      return;
+    }
+    
+    // Si es un ancla interna y estamos en móvil, se cierra el menú.
+    if (this.getAttribute("href").startsWith("#") && window.innerWidth <= 767) {
+      navLinks.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+});
+
 
     // --- 3. Submenús / Acordeón en móvil ---
     document.querySelector(".has-submenu > a").addEventListener("click", function (event) {
@@ -1326,6 +1333,44 @@ footer a:hover {
           navLinks.classList.remove("active");
           document.body.classList.remove("menu-open");
         }
+        document.querySelectorAll("#nav-links a[href^='#']:not(.club-link)").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const mainSections = document.querySelectorAll("#inicio, #galeria, #promociones, #Eventos, #contacto, #ubicacion");
+    const clubSections = document.querySelectorAll("#tropicana, #sahara");
+    
+    // Si el enlace apunta a una sección principal, la mostramos y ocultamos las secciones de club.
+    let found = false;
+    mainSections.forEach(sec => {
+      if(sec.id === targetId) {
+        sec.classList.remove("hidden");
+        found = true;
+      } else {
+        sec.classList.add("hidden");
+      }
+    });
+    if(found) {
+      clubSections.forEach(sec => sec.classList.add("hidden"));
+    } else {
+      // Si no se encontró en las secciones principales, asumimos que es una sección de club.
+      mainSections.forEach(sec => sec.classList.add("hidden"));
+      clubSections.forEach(sec => {
+        if(sec.id === targetId) {
+          sec.classList.remove("hidden");
+        } else {
+          sec.classList.add("hidden");
+        }
+      });
+    }
+    
+    // Cierra el menú en dispositivos móviles
+    if(window.innerWidth <= 767) {
+      document.getElementById("nav-links").classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+});
 
         // Muestra/oculta secciones según el "data-club"
         const clubId = link.getAttribute("data-club");
