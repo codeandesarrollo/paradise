@@ -118,15 +118,18 @@ header {
 }
 
 .language-switcher {
-  display: flex;
-  gap: 10px;
-}
+    display: flex !important;
+    gap: 5px; /* Ajusta el espacio entre botones si es necesario */
+   
+
+  }
+
 
 .language-switcher button {
   background: none;
   border: 1px solid #cda34f;
   color: #cda34f;
-  padding: 10px 15px;
+  padding: 2px 4px;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
@@ -146,8 +149,8 @@ header {
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: -13px;
+  top: 5px;
   z-index: 1001;
   padding: 10px;
 }
@@ -210,6 +213,7 @@ nav ul li a:hover {
 
 /* ====================== CARRUSEL, HERO Y SECCIONES ====================== */
 .carousel-container {
+  
   position: relative;
   width: 100%;
   height: 100vh;
@@ -675,6 +679,10 @@ footer a:hover {
 
 /* ====================== MEDIA QUERY PARA MÓVILES (max-width: 767px) ====================== */
 @media (max-width: 767px) {
+  .carousel-container {
+    margin-top: 90px; /* Ajusta este valor según lo que necesites */
+  }
+
   /* Header fijo en la parte superior */
   header {
     position: fixed;
@@ -764,7 +772,7 @@ footer a:hover {
     color: #ffd700;
   }
 
-  /* Si manejas submenús, podrías usar un pequeño acordeón en vez de :hover */
+  /* acordeón en vez de :hover */
   .submenu {
     position: static;
     max-height: 0;
@@ -793,7 +801,7 @@ footer a:hover {
   }
   /* Ajustes extra del resto de secciones en móvil */
   .carousel-container {
-    height: 40vh;
+    height: 50vh;
     
   }
 
@@ -801,19 +809,21 @@ footer a:hover {
     margin-bottom: 30px;
   }
   .hero-content {
-    top: 15%;
+    top: 25%;
     transform: translate(-50%, -40%);
     font-size: 0.9rem; 
     text-align: center;
   }
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .hero-content p {
     font-size: 1rem;
   }
 
   .btn-custom {
+
+
     padding: 8px 16px;
     font-size: 0.9rem;
   }
@@ -834,7 +844,9 @@ footer a:hover {
   .ubicacion-card {
     width: 90%;
   }
-
+  #galeria {
+    margin-top: -350px /* Ajusta este valor para mover la galería hacia arriba */
+  }
   .gallery-item {
     width: 90%;
     height: 150px;
